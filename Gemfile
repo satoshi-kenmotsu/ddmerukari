@@ -74,3 +74,5 @@ end
 group :production do
   gem 'unicorn'
 end
+gem 'haml-rails'
+gem 'erb2haml'
