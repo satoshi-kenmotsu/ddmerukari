@@ -83,12 +83,12 @@ belongs_to :user
 |delivery_dates|string|null:false|
 |price|integer|null:false|
 |user_id|integer|foreign_key:ture|
-|item_image_id|integer|foreign_key:ture|
 |category_id|integer|foreign_key:ture|
 ## Association
-belong_to :user
+belongs_to :user
+belongs_to :categories
 has_many :items_images
-has_many :categories
+
 
 
 
@@ -109,5 +109,5 @@ belongs_to :item
 |item_id|string|foreign_key:ture|
 
 ## Association
-belongs_to item
+has_many :items
 
