@@ -43,9 +43,9 @@ Things you may want to cover:
 |item_id|integer||foreign_key:ture|
 
 ### Association
-belongs_to :credit
-belongs_to :addres
-has_many   :items
+has_one :credit
+has_one :addres
+has_many :items
 
 
 
