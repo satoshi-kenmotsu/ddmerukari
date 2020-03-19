@@ -1,3 +1,76 @@
 // Place all the styles related to the items controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
+* {
+  box-sizing: border-box;
+}
+
+.header{
+  height: 97px;
+  width: 100%;
+  background-color: red;
+  padding: 0px 60px;
+  &__inner{
+    max-width: 1040px;
+    width: 100%;
+    min-height: 82px;
+    margin: 0 auto;
+    padding: 15px 0 0;
+    background-color: blue;
+    &--top{
+      height: 50px;
+      background-color: yellow;
+      display: flex;
+      .top-left{
+        height: 50px;
+        width: 140px;
+        background-color: lightslategrey;
+      }
+      .top-right{
+        height: 41px;
+        width: 870px;
+        background-color: mediumpurple;
+      }
+    }
+    &--bottom{
+       height: 32px;
+       background-color: green;
+       display: flex;
+       margin-bottom: 10px;
+       .bottom-left{
+         background-color: blue;
+         height: 32px;
+         width: 200px;
+         display: flex;
+         &__category{
+           width: 99px;
+           height: 32px;
+           background-color: indigo;
+         }
+         &__bland{
+          padding: 0 0 0 16px;
+          width: 99px;
+          height: 32px;
+          background-color: khaki;
+         }
+       }
+       .bottom-right{
+         background-color: black;
+         height: 32px;
+         width: 170px;
+         margin-left: auto;
+         display: flex;
+         &__login{
+           height: 32px;
+           width: 70px;
+           background-color: lightcoral;
+         }
+         &__create{
+           background-color: lightseagreen;
+           height: 32px;
+           width: 100px;
+         }
+       }
+    }
+  }
+}
