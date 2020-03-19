@@ -38,13 +38,11 @@ Things you may want to cover:
 |birth_month|integer|null:false|
 |birth_day|integer|null:false|
 |telephone|integer|null:false,unique|
-|addres_id|integer|foreign_key:ture|
-|credit_id|integer||foreign_key:ture|
-|item_id|integer||foreign_key:ture|
+
 
 ### Association
 has_one :credit
-has_one :addres
+has_one :address
 has_many :items
 
 
