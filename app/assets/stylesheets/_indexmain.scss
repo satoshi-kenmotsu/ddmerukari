@@ -177,5 +177,22 @@
       line-height: 1.4;
       font-weight: bold;
     }
+    .productBox {
+      margin: 0;
+      padding: 0;
+      .productHead {
+        text-align: center;
+        font-size: 24px;
+        text-decoration: none;
+        color: #3CCACE;
+        font-weight: bold;
+      }
+      .productLists {
+        width: 780px;
+        margin: 26px auto;
+        display: flex;
+        justify-content: space-around;
+      }
+    }
   }
 }
