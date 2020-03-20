@@ -8,4 +8,83 @@
     = stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload'
     = javascript_include_tag 'application', 'data-turbolinks-track': 'reload'
   %body
+    .header
+      .header__inner
+        .header__inner--top
+          .top-left
+            = link_to image_tag('http://furima.tokyo/assets/logo-d3d78326971d78b06e3d6f0ba666d025a8ad681286b4d9e00e7dbe8673bcfd23.svg')
+
+          .top-right
+            %form(accept-charset="UTF-8" action="#" method="get")
+              %input(name="utf8" type="hidden" value="✓")/
+              %input#searchInput.searchBox--input(name="key" placeholder="キーワードから探す")/
+              %form.button_to(action="/?type=submit" method="post")
+              %button(type="submit")
+                %img(src="/assets/search_btn.png")/
+        .header__inner--bottom
+          .bottom-left
+            .bottom-left__category
+              = link_to 'カテゴリー', '#'
+            .bottom-left__bland
+              = link_to 'ブランド', '#'
+
+          .bottom-right
+            .bottom-right__login
+              = link_to 'ログイン', '#'
+            .bottom-right__create
+              = link_to '新規会員登録', '#'
+
     = yield
+    .banner
+      .in
+        %h2.in__top だれでもかんたん、人生を変えるフリマアプリ
+        %p.in__bottom 今すぐ無料ダウンロード！
+        .in__icon
+          = link_to image_tag('http://furima.tokyo/assets/app-store-9c5e28e8f81bd9912e0ded2f78821e04778a1356c05dc7c7bf1e88614be37c34.svg', class: "apple" )
+          = link_to image_tag('http://furima.tokyo/assets/google-play-469c63f1269e456307c4dde176b33cc3bbbbf142ac4d7369656010130149db1a.svg', class: "google")
+
+    .footer
+      %ul.contents
+        %li.content
+          %h2.content__top
+            FURIMAについて
+          %ul
+            %li
+              = link_to '会社概要（運営会社）', '#'
+            %li
+              = link_to 'プライバシーポリシー', '#'
+            %li
+              = link_to 'FURIMA利用規約', '#'
+            %li
+              = link_to 'ポイントに関する特約', '#'
+        %li.content
+          %h2.content__top
+            FURIMAを見る
+          %ul
+            %li
+              = link_to 'カテゴリー一覧', '#'
+
+            %li
+              = link_to 'ブランド一覧', '#'
+
+
+        %li.content
+          %h2.content__top
+            <nobr>ヘルプ＆ガイド</nobr>
+          %ul
+            %li
+              = link_to 'FURIMAガイド', '#'
+            %li
+              = link_to 'FURIMAロゴ利用ガイドライン', '#'
+            %li
+              = link_to 'お知らせ', '#'
+
+      .footer__logo
+        = link_to image_tag('http://furima.tokyo/assets/logo-white-f61961ed5170064c5f33dd4524bdceeb5a5df2c83eb76fba31143f63fbab2c5e.svg')
+      %p &copy;FURIMA
+
+      = link_to  '#' do
+        .syuppin
+          .syuppin__content
+            %p 出品する
+            =image_tag '/assets/icon_camera.png', class: "syuppin__content--camera"
