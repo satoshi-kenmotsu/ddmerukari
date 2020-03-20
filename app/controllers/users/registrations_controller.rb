@@ -31,8 +31,12 @@ class Users::RegistrationsController < Devise::RegistrationsController
       render :new_address and return
     end
     @user.build_address(@address.attributes)
-    @user.save
-    sign_in(:user, @user)
+    if @user.save
+      puts "保存に成功しました"
+      sign_in(:user, @user)
+    else
+      puts "保存に失敗しました"
+    end  
   end
 
 
