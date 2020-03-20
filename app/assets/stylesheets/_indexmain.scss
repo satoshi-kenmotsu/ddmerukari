@@ -3,7 +3,7 @@
   .mainVisual {
     width: 100%;
     height: 560px;
-    background-image: url(/assets/bg-mainVisual-pict_pc-a1a4be0….jpg);
+    background-image: url(http://furima.tokyo/assets/bg-mainVisual-pict_pc-a1a4be0d864c29338b03d163957f9fd26b20f7c1fa0d05c17b603ec54d249ebe.jpg);
     background-size: cover;
     background-repeat: no-repeat;
     background-position: top center;
@@ -80,6 +80,9 @@
             background-color: #3CCACE;
             color: #fff;
           }
+          img {
+            width: 100%;
+          }
         }
         &__text {
           font-weight: bold;
@@ -96,7 +99,7 @@
     }
   }
   .topMiddleDl {
-    background-image: url(/assets/bg-topMiddleDl-pict-5042a3a….jpg);
+    background-image: url(http://furima.tokyo/assets/bg-topMiddleDl-pict-5042a3aa7eef6dd93330080028e3a781daf47c390c00a4fb5d7e7b06caae68c9.jpg);
     background-position: bottom right;
     height: 400px;
     background-size: cover;
@@ -152,6 +155,9 @@
           width: 70%;
           margin: 0 auto;
           line-height: 120px;
+          img {
+            width: 100%;
+          }
         }
         &__subtitle {
           margin: 38px 0 10px;
@@ -182,16 +188,86 @@
       padding: 0;
       .productHead {
         text-align: center;
-        font-size: 24px;
-        text-decoration: none;
-        color: #3CCACE;
-        font-weight: bold;
+        a {
+          font-size: 24px;
+          text-decoration: none;
+          color: #3CCACE;
+          .title {
+            font-weight: bold;
+          }
+        }
       }
       .productLists {
         width: 780px;
         margin: 26px auto;
         display: flex;
         justify-content: space-around;
+        .productList {
+          width: 220px;
+          display: inline-block;
+          float: left;
+          a {
+            background-color: #fff;
+            display: inline-block;
+            .productList--img {
+              width: 220px;
+              height: 150px;
+              position: relative;
+              overflow: hidden;
+              margin: 0;
+              z-index: auto;
+              img {
+                position: absolute;
+                top: 0;
+                left: 0;
+                right: 0;
+                bottom: 0;
+                width: 100%;
+                z-index: auto;
+                height: 150px;
+                object-fit: cover;
+              }
+            }
+            .productList--body {
+              background-color: white;
+              color: #333;
+              padding: 16px;
+              .name {
+                overflow: hidden;
+                line-height: 1.5;
+                font-size: 16px;
+                text-align: left;
+              }
+              .details {
+                font-size: 16px;
+                ul {
+                  display: flex;
+                  align-items: center;
+                  justify-content: space-between;
+                  li {
+                    margin: 0;
+                    padding: 0;
+                  }
+                  li {
+                    margin: 0;
+                    padding: 0;
+                    .fa.fa-star.likeIcon {
+                      display: inline-block;
+                      font: normal normal normal 14px/1 FontAwesome;
+                      font-size: inherit;
+                      text-rendering: auto;
+                      -webkit-font-smoothing: antialiased;
+                    }
+                  }
+                }
+                p {
+                  font-size: 10px;
+                  text-align: left;
+                }
+              }
+            }
+          }
+        }
       }
     }
   }
