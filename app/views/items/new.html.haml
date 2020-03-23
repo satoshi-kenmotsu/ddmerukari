@@ -311,7 +311,7 @@
             %img.sc-yZwTr.gBkKhI{:alt => "Mercari", :src => "http://furima.tokyo/assets/logo-d3d78326971d78b06e3d6f0ba666d025a8ad681286b4d9e00e7dbe8673bcfd23.svg"}/
         .sc-fAjcbJ.iYiELi.sc-fjhmcy.dKjbVH
           .sc-caSCKo.OLMic
-            %form.sc-dEfkYy.kjTeNF{:action => "#"}
+            = form_for @item do |f|
               .sc-cTjmhe.gMiSZt
                 .style_formgroup__3IPME.sc-iNhVCk.iucczz
                   .style_body__1OP1S
@@ -364,13 +364,13 @@
                 %p.sc-eAKXzc.iLTrHh 商品の詳細
                 .style_formgroup__3IPME.sc-iNhVCk.iucczz
                   .style_body__1OP1S
-                    %div{:name => "categoryId"}
+                    %div{:name => "category"}
                       .style_formLabel__3wM81.common_fontFamily__3-3Si
                         %label カテゴリー
                         %span.style_tag__xA80S.style_attention__3ULCL.style_small__2vSa8.common_fontFamily__3-3Si 必須
                     .style_select__3R6W_.common_fontFamily__3-3Si.style_fluid__31br4
                       .style_selectarea__3ZX8E
-                        %select{:name => "categoryId"}
+                        %select{:name => "category"}
                           %option{"aria-selected" => "true", :label => "選択してください", :selected => "selected", :value => ""} 選択してください
                           %option{"aria-selected" => "false", :label => "レディース", :value => "1"} レディース
                           %option{"aria-selected" => "false", :label => "メンズ", :value => "2"} メンズ
@@ -394,17 +394,17 @@
                       %span.style_tag__xA80S.style_hint__3awFd.style_small__2vSa8.common_fontFamily__3-3Si 任意
                     .style_textField__1jvsM.common_fontFamily__3-3Si.style_fluid__1h6iv
                       .style_inputarea__1mtsA
-                        %input{:autocomplete => "off", :name => "brandName", :placeholder => "例）シャネル", :type => "text", :value => ""}/
+                        %input{:autocomplete => "off", :name => "bland", :placeholder => "例）シャネル", :type => "string", :value => ""}/
                     %ul.sc-jbKcbu.cApMkI.sc-bfYoXt.evZoVs.style_controls__B6nQm
                 .style_formgroup__3IPME.sc-iNhVCk.iucczz
                   .style_body__1OP1S
-                    %div{:name => "itemCondition"}
+                    %div{:name => "status"}
                       .style_formLabel__3wM81.common_fontFamily__3-3Si
                         %label 商品の状態
                         %span.style_tag__xA80S.style_attention__3ULCL.style_small__2vSa8.common_fontFamily__3-3Si 必須
                     .style_select__3R6W_.common_fontFamily__3-3Si.style_fluid__31br4
                       .style_selectarea__3ZX8E
-                        %select{:name => "itemCondition"}
+                        %select{:name => "status"}
                           %option{"aria-selected" => "true", :label => "選択してください", :selected => "selected", :value => ""} 選択してください
                           %option{"aria-selected" => "false", :label => "新品、未使用", :value => "1"} 新品、未使用
                           %option{"aria-selected" => "false", :label => "未使用に近い", :value => "2"} 未使用に近い
@@ -425,13 +425,13 @@
                       %circle{:cx => "12", :cy => "16.24", :r => "1"}
                 .style_formgroup__3IPME.sc-iNhVCk.iucczz
                   .style_body__1OP1S
-                    %div{:name => "shippingPayer"}
+                    %div{:name => "delivery_charge"}
                       .style_formLabel__3wM81.common_fontFamily__3-3Si
                         %label 配送料の負担
                         %span.style_tag__xA80S.style_attention__3ULCL.style_small__2vSa8.common_fontFamily__3-3Si 必須
                     .style_select__3R6W_.common_fontFamily__3-3Si.style_fluid__31br4
                       .style_selectarea__3ZX8E
-                        %select{:name => "shippingPayer"}
+                        %select{:name => "delivery_charge"}
                           %option{"aria-selected" => "true", :label => "選択してください", :selected => "selected", :value => ""} 選択してください
                           %option{"aria-selected" => "false", :label => "送料込み(出品者負担)", :value => "2"} 送料込み(出品者負担)
                           %option{"aria-selected" => "false", :label => "着払い(購入者負担)", :value => "1"} 着払い(購入者負担)
@@ -439,13 +439,13 @@
                           %path{:d => "M12,15.66a1.73,1.73,0,0,1-1.2-.49L5.21,9.54a.7.7,0,0,1,1-1l5.62,5.62c.15.15.27.15.41,0L17.8,8.6a.71.71,0,0,1,1,0,.69.69,0,0,1,0,1l-5.57,5.58A1.71,1.71,0,0,1,12,15.66Z"}
                 .style_formgroup__3IPME.sc-iNhVCk.iucczz
                   .style_body__1OP1S
-                    %div{:name => "shippingFromArea"}
+                    %div{:name => "prefecture"}
                       .style_formLabel__3wM81.common_fontFamily__3-3Si
                         %label 発送元の地域
                         %span.style_tag__xA80S.style_attention__3ULCL.style_small__2vSa8.common_fontFamily__3-3Si 必須
                     .style_select__3R6W_.common_fontFamily__3-3Si.style_fluid__31br4
                       .style_selectarea__3ZX8E
-                        %select{:name => "shippingFromArea"}
+                        %select{:name => "prefecture"}
                           %option{"aria-selected" => "true", :label => "選択してください", :selected => "selected", :value => ""} 選択してください
                           %option{"aria-selected" => "false", :label => "北海道", :value => "1"} 北海道
                           %option{"aria-selected" => "false", :label => "青森県", :value => "2"} 青森県
@@ -499,13 +499,13 @@
                           %path{:d => "M12,15.66a1.73,1.73,0,0,1-1.2-.49L5.21,9.54a.7.7,0,0,1,1-1l5.62,5.62c.15.15.27.15.41,0L17.8,8.6a.71.71,0,0,1,1,0,.69.69,0,0,1,0,1l-5.57,5.58A1.71,1.71,0,0,1,12,15.66Z"}
                 .style_formgroup__3IPME.sc-iNhVCk.iucczz
                   .style_body__1OP1S
-                    %div{:name => "shippingDuration"}
+                    %div{:name => "delivery_date"}
                       .style_formLabel__3wM81.common_fontFamily__3-3Si
                         %label 発送までの日数
                         %span.style_tag__xA80S.style_attention__3ULCL.style_small__2vSa8.common_fontFamily__3-3Si 必須
                     .style_select__3R6W_.common_fontFamily__3-3Si.style_fluid__31br4
                       .style_selectarea__3ZX8E
-                        %select{:name => "shippingDuration"}
+                        %select{:name => "delivery_date"}
                           %option{"aria-selected" => "true", :label => "選択してください", :selected => "selected", :value => ""} 選択してください
                           %option{"aria-selected" => "false", :label => "1~2日で発送", :value => "1"} 1~2日で発送
                           %option{"aria-selected" => "false", :label => "2~3日で発送", :value => "2"} 2~3日で発送
@@ -620,3 +620,5 @@
         navigator.serviceWorker.register('/jp/service-worker.js').catch(function () {});
         });
         }
+
+form
