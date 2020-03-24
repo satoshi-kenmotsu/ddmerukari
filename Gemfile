@@ -79,3 +79,7 @@ end
 gem 'haml-rails'
 gem 'erb2haml'
 gem 'devise'
+gem 'carrierwave'
+gem 'mini_magick'
+gem 'active_hash'
+gem 'jquery-rails'

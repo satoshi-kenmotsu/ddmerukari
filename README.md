@@ -92,10 +92,10 @@ has_many :items_images
 
 
 
-## item_imagesテーブル
+## imagesテーブル
 |Column|Type|Options|
 |------|----|-------|
-|image|string|null:false|
+|src|string|null:false|
 |item_id|references|null:false,foreign_key:true|
 
 ## Association
