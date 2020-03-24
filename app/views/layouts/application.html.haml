@@ -20,7 +20,7 @@
               %input#searchInput.searchBox--input(name="key" placeholder="キーワードから探す")/
               %form.button_to(action="/?type=submit" method="post")
               %button(type="submit")
-                %img(src="/assets/material/icon/icon-search 1.png")/
+                = link_to image_tag('/assets/material/icon/icon-search 1.png')
         .header__inner--bottom
           .bottom-left
             .bottom-left__category
@@ -87,4 +87,4 @@
         .syuppin
           .syuppin__content
             %p 出品する
-            =image_tag '/assets/material/icon/icon_camera.png', class: "syuppin__content--camera"
+            = link_to image_tag('/assets/material/icon/icon_camera.png'),new_item_path
