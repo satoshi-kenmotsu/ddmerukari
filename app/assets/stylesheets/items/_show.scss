@@ -15,28 +15,45 @@
     }
     .clearfix {
       margin: 16px 0 0;
-      .item-photo {
-        float: left;
-        min-width: 300px;
-        max-width: 300px;
-        min-height: 375px;
-        .owl-carousel {
-          position: relative;
-          .owl-stage-outer {
+        .itemBox__body {
+          float: left;
+          float: left;
+          min-width: 300px;
+          max-width: 300px;
+          min-height: 375px;
+          ul {
+            display: flex;
             position: relative;
-            overflow: hidden;
-            .owl-item-inner {
-              position: relative;
-              width: 100%;
-              height: 0;
-              padding: 0 0 100%;
+            li {
+              display: flex;
+              flex-direction: column;
+              width: 560px;
+              align-items: center;
+              margin: 0 auto;
+              img {
+                object-fit: cover;
+                height: 346px;
+                width: 100%;
+                vertical-align: bottom;
+              }
+              ul {
+                display: flex;
+                justify-content: center;
+                margin-top: 10px;
+                li {
+                  width: 25%;
+                  margin: 0 10px 0 0;
+                  flex-direction: column;
+                  img {
+                    width: 100%;
+                    object-fit: cover;
+                    height: 87px;
+                  }
+                }
+              }
             }
           }
-          .owl-dots {
-            line-height: 0;
-          }
         }
-      }
       table {
         float: right;
         max-width: 300px;
@@ -117,14 +134,14 @@
           line-height: 1.5;
         }
         .btn-gray {
-            width: 100%;
-            margin: 8px 0 0;
-            font-size: 0;
-            text-align: center;
-            background: #aaa;
-            border: 1px solid #aaa;
-            color: #fff;
-            height: 60px;
+          width: 100%;
+          margin: 8px 0 0;
+          font-size: 20px;
+          text-align: center;
+          background: #aaa;
+          border: 1px solid #aaa;
+          color: #fff;
+          height: 60px;
         }
       }
     }

@@ -86,37 +86,26 @@
         }
         }
   %body
-    / Google Tag Manager (noscript)
-    %noscript
-      %iframe{:height => "0", :src => "https://www.googletagmanager.com/ns.html?id=GTM-KLPT5L5", :style => "display:none;visibility:hidden", :width => "0"}
-    / End Google Tag Manager (noscript)
     .default-container
       %section.item-box-container.l-single-container
         %h1.item-name ハンドメイド インナーマスク
         .item-main-content.clearfix
-          .item-photo
-            .owl-carousel
-              .owl-item-inner
-                %img.owl-lazy{:alt => "ハンドメイド インナーマスク", "data-src" => "https://static.mercdn.net/item/detail/orig/photos/m66725710886_1.jpg?1584699390"}/
-              .owl-item-inner
-                %img.owl-lazy{:alt => "ハンドメイド インナーマスク", "data-src" => "https://static.mercdn.net/item/detail/orig/photos/m66725710886_2.jpg?1584699390"}/
-              .owl-item-inner
-                %img.owl-lazy{:alt => "ハンドメイド インナーマスク", "data-src" => "https://static.mercdn.net/item/detail/orig/photos/m66725710886_3.jpg?1584699390"}/
+          .itemBox__body
+            %ul
+              %li
+                %img{:src => "https://s3-ap-northeast-1.amazonaws.com/mercarimaster/uploads/captured_image/content/7/a001.png"}/
+                %ul
+                  %li
+                    %img{:height => "75", :src => "https://s3-ap-northeast-1.amazonaws.com/mercarimaster/uploads/captured_image/content/7/a001.png", :width => "75"}/
+                  %li
+                    %img{:height => "75", :src => "https://s3-ap-northeast-1.amazonaws.com/mercarimaster/uploads/captured_image/content/8/a002.png", :width => "75"}/
+                  %li
+                    %img{:height => "75", :src => "https://s3-ap-northeast-1.amazonaws.com/mercarimaster/uploads/captured_image/content/9/a003.png", :width => "75"}/
           %table.item-detail-table
             %tr
               %th 出品者
               %td
                 %a{:href => "https://www.mercari.com/jp/u/482177612/"} ゆう
-                %div
-                  .item-user-ratings
-                    %i.icon-good
-                    %span 711
-                  .item-user-ratings
-                    %i.icon-normal
-                    %span 4
-                  .item-user-ratings
-                    %i.icon-bad
-                    %span 0
             %tr
               %th カテゴリー
               %td
@@ -184,110 +173,3 @@
               %textarea.textarea-default{:name => "body", :type => "text", :value => ""}
               %button.message-submit.btn-default.btn-gray{:type => "submit"}
                 %span コメントする
-      %ul.nav-item-link-prev-next.clearfix
-        %li.nav-item-link-prev
-          %a{:href => "/jp/items/m94277921752/"}
-            %i.icon-arrow-left>
-            80サイズ  リボンと小花のワンピース
-        %li.nav-item-link-next
-          %a{:href => "/jp/items/m13277715928/"}
-            Tシャツ
-            %i.icon-arrow-right
-      .item-social-media-box
-        .text-center
-          .fb-save{"data-uri" => "product://113299479059860/m66725710886"}
-        %ul.social-media-box
-          %li
-            %a.share-btn{"data-window-name" => "facebook_window", :href => "http://www.facebook.com/share.php?u=https%3A%2F%2Fwww.mercari.com%2Fjp%2Fitems%2Fm66725710886%2F", :target => "_blank"}
-              %i.icon-facebook
-          %li
-            %a.share-btn{"data-window-name" => "twitter_window", :href => "http://twitter.com/share?count=horizontal&original_referer=https%3A%2F%2Fwww.mercari.com%2Fjp%2Fitems%2Fm66725710886%2F&text=%E3%83%8F%E3%83%B3%E3%83%89%E3%83%A1%E3%82%A4%E3%83%89%20%E3%82%A4%E3%83%B3%E3%83%8A%E2%80%A6%20%28%C2%A51%2C000%29%20https%3A%2F%2Fwww.mercari.com%2Fjp%2Fitems%2Fm66725710886%2F%20%E3%83%95%E3%83%AA%E3%83%9E%E3%82%A2%E3%83%97%E3%83%AA%E3%80%8C%E3%83%A1%E3%83%AB%E3%82%AB%E3%83%AA%E3%80%8D%E3%81%A7%E8%B2%A9%E5%A3%B2%E4%B8%AD%E2%99%AA%20%23%E3%83%A1%E3%83%AB%E3%82%AB%E3%83%AA%20%40mercari_jp%E3%81%95%E3%82%93%E3%81%8B%E3%82%89", :target => "_blank"}
-              %i.icon-twitter
-          %li.social-hidden-item
-            %a{:href => "http://line.me/R/msg/text/?ハンドメイド インナーマスク%20%7C%20%E3%83%A1%E3%83%AB%E3%82%AB%E3%83%AA%20%E3%82%B9%E3%83%9E%E3%83%9B%E3%81%A7%E3%81%8B%E3%82%93%E3%81%9F%E3%82%93%20%E3%83%95%E3%83%AA%E3%83%9E%E3%82%A2%E3%83%97%E3%83%AA%0D%0Ahttps://www.mercari.com/jp/items/m66725710886/", :target => "_blank"}
-              %i.icon-line
-          %li
-            %a.share-btn{"data-window-name" => "pinterest_window", :href => "http://pinterest.com/pin/create/button/?url=https%3A%2F%2Fwww.mercari.com%2Fjp%2Fitems%2Fm66725710886%2F&media=https%3A%2F%2Fstatic.mercdn.net%2Fitem%2Fdetail%2Forig%2Fphotos%2Fm66725710886_1.jpg%3F1584699390&description=%E3%83%A1%E3%83%AB%E3%82%AB%E3%83%AA%E5%95%86%E5%93%81%3A%20%E3%83%8F%E3%83%B3%E3%83%89%E3%83%A1%E3%82%A4%E3%83%89%20%E3%82%A4%E3%83%B3%E3%83%8A%E3%83%BC%E3%83%9E%E3%82%B9%E3%82%AF%20%23%E3%83%A1%E3%83%AB%E3%82%AB%E3%83%AA", :target => "_blank"}
-              %i.icon-pinterest
-      .items-in-user-profile
-        %section.items-box-container.clearfix.related-item-column.items-in-user-profile
-          .items-box-content.clearfix
-        %section.items-box-container.clearfix.related-item-column
-          %h2.items-box-head
-            %a{:href => "https://www.mercari.com/jp/category/837/"}
-              救急/衛生用品 （コスメ・香水・美容） その他の商品
-          .items-box-content.clearfix
-            %section.items-box
-              %a{:href => "/jp/items/m20734931079/"}
-                %figure.items-box-photo
-                  %img.lazyload{:alt => "おでかけ除菌 ウエットティッシュ 90枚", "data-src" => "https://static.mercdn.net/thumb/photos/m20734931079_1.jpg?1584699605"}/
-                .items-box-body
-                  %h3.items-box-name.font-2 おでかけ除菌 ウエットティッシュ 90枚
-                  .items-box-num
-                    .items-box-price.font-5 ¥700
-            %section.items-box
-              %a{:href => "/jp/items/m29280903262/"}
-                %figure.items-box-photo
-                  %img.lazyload{:alt => "ハンドソープ、除菌スプレー", "data-src" => "https://static.mercdn.net/thumb/photos/m29280903262_1.jpg?1584699591"}/
-                .items-box-body
-                  %h3.items-box-name.font-2 ハンドソープ、除菌スプレー
-                  .items-box-num
-                    .items-box-price.font-5 ¥2,000
-            %section.items-box
-              %a{:href => "/jp/items/m90099980502/"}
-                %figure.items-box-photo
-                  %img.lazyload{:alt => "3/22発送予定！インナーパッド 2枚セット ハンドメイド", "data-src" => "https://static.mercdn.net/thumb/photos/m90099980502_1.jpg?1584618637"}/
-                .items-box-body
-                  %h3.items-box-name.font-2 3/22発送予定！インナーパッド 2枚セット ハンドメイド
-                  .items-box-num
-                    .items-box-price.font-5 ¥861
-                    .font-2
-                      %i.icon-like-border
-                      %span 1
-            %section.items-box
-              %a{:href => "/jp/items/m83483189146/"}
-                %figure.items-box-photo
-                  %img.lazyload{:alt => "アトファイン", "data-src" => "https://static.mercdn.net/thumb/photos/m83483189146_1.jpg?1584699583"}/
-                .items-box-body
-                  %h3.items-box-name.font-2 アトファイン
-                  .items-box-num
-                    .items-box-price.font-5 ¥1,400
-            %section.items-box
-              %a{:href => "/jp/items/m70184406776/"}
-                %figure.items-box-photo
-                  %img.lazyload{:alt => "除菌アルコールウェット 20枚 アルコールジェル20ml", "data-src" => "https://static.mercdn.net/thumb/photos/m70184406776_1.jpg?1584699573"}/
-                  %figcaption
-                    .item-sold-out-badge
-                      %div SOLD
-                .items-box-body
-                  %h3.items-box-name.font-2 除菌アルコールウェット 20枚 アルコールジェル20ml
-                  .items-box-num
-                    .items-box-price.font-5 ¥333
-                    .font-2
-                      %i.icon-like-border
-                      %span 1
-            %section.items-box
-              %a{:href => "/jp/items/m40975986833/"}
-                %figure.items-box-photo
-                  %img.lazyload{:alt => "ミキたん様専用120枚", "data-src" => "https://static.mercdn.net/thumb/photos/m40975986833_1.jpg?1584697738"}/
-                .items-box-body
-                  %h3.items-box-name.font-2 ミキたん様専用120枚
-                  .items-box-num
-                    .items-box-price.font-5 ¥990
-      %aside.modal{"data-close" => "modal", "data-modal" => "report-item"}
-        .modal-inner.modal-banner
-          .modal-body
-            .modal-head.bold 確認
-            不適切な商品を報告しますか？
-          .clearfix
-            .modal-btn.modal-btn-cancel{"data-close" => "modal"} キャンセル
-            %a{:href => "https://www.mercari.com/jp/report/m66725710886/"}
-              %button.modal-btn.modal-btn-submit はい
-      %nav.bread-crumbs.pos-bottom
-        %ul
-          %li{:itemscope => "", :itemtype => "http://data-vocabulary.org/Breadcrumb"}
-            %a{:href => "https://www.mercari.com/jp/", :itemprop => "url"}
-              %span{:itemprop => "title"} メルカリ
-            %i.icon-arrow-right
-          %li{:itemscope => "", :itemtype => "http://data-vocabulary.org/Breadcrumb"}
-            %span{:itemprop => "title"} ハンドメイド インナーマスク
