@@ -35,7 +35,8 @@ class Users::RegistrationsController < Devise::RegistrationsController
       sign_in(:user, @user)
     else
       puts "保存に失敗しました"
-    end  
+    end
+    redirect_to :root
   end
 
 
