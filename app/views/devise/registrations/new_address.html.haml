@@ -1,0 +1,44 @@
+.address
+  = render "header"
+  .address__section
+    .address__section__inner
+      .address__section__inner__title
+        住所情報登録
+      .address__section__inner__form
+        = form_for @address do |f|
+          = render "devise/shared/error_messages", resource: @address
+          .field-top
+            = f.label :post_number, "郵便番号"
+            %span.required
+              必須
+            %br/
+            = f.text_field :post_number, class: "input-field"
+          .field
+            = f.label :prefecture, "都道府県"
+            %span.required
+              必須
+            %br/
+            = f.text_field :prefecture, class: "input-field"
+          .field
+            = f.label :city, "市町村"
+            %span.required
+              必須
+            %br/
+            = f.text_field :city, class: "input-field"
+          .field
+            = f.label :house_number, "住所"
+            %span.required
+              必須
+            %br/
+            = f.text_field :house_number, class: "input-field"
+          .field
+            = f.label :building, "建物名・部屋番号"
+            %br/
+            = f.text_field :building, class: "input-field"
+          .field
+            = f.label :telephone, "電話番号"
+            %br/
+            = f.text_field :telephone, class: "input-field"
+          .actions
+            = f.submit "次へ進む", class: "next-btn"
+  = render "footer"

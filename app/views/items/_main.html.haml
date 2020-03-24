@@ -3,7 +3,7 @@
     .content
       %h2.content__subtitle
         %br/
-        人生を変えるフリマアプリ
+        自分を変えるフリマアプリ
       %p.content__text
         FURIMAはだれでもかんたんに出品・購入できる
         %br/
@@ -88,6 +88,7 @@
           %h3.title 新規投稿商品
       .productLists
         .productList
+          -# = render @items
           %a{:href => "/products/3"}
             %figure.productList--img
               = image_tag "https://s3-ap-northeast-1.amazonaws.com/mercarimaster/uploads/captured_image/content/13/a007.png"
