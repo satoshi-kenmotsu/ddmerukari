@@ -92,4 +92,41 @@
       font-size: 18px;
     }
   }
+  .item-detail-message {
+    width: 700px;
+    margin: 8px auto;
+    .message-content {
+      padding: 24px;
+      background: #fff;
+      .message-form {
+        p {
+          padding: 8px;
+          font-size: 14px;
+          background: #fff6de;
+        }
+        .textarea-default {
+          margin: 8px 0 0;
+          display: block;
+          width: 100%;
+          max-width: 100%;
+          min-height: 104px;
+          padding: 10px;
+          border: 1px solid #ccc;
+          background: #fff;
+          font-size: 16px;
+          line-height: 1.5;
+        }
+        .btn-gray {
+            width: 100%;
+            margin: 8px 0 0;
+            font-size: 0;
+            text-align: center;
+            background: #aaa;
+            border: 1px solid #aaa;
+            color: #fff;
+            height: 60px;
+        }
+      }
+    }
+  }
 }

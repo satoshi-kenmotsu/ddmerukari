@@ -184,22 +184,6 @@
               %textarea.textarea-default{:name => "body", :type => "text", :value => ""}
               %button.message-submit.btn-default.btn-gray{:type => "submit"}
                 %span コメントする
-          %aside.modal{"data-close" => "modal", "data-modal" => "delete-comment"}
-            .modal-inner.modal-banner
-              .modal-body
-                .modal-head.bold 確認
-                %div{"data-comment" => "body"}
-                %br/
-                本当にこのコメントを削除してよろしいですか？
-              %form{:action => "https://www.mercari.com/jp/comment/delete/", :method => "POST"}
-                .clearfix
-                  .modal-btn.modal-btn-cancel{"data-close" => "modal"} キャンセル
-                  %button.modal-btn.modal-btn-submit{:type => "submit"}
-                    削除する
-                %input{:name => "item_id", :type => "hidden", :value => "m66725710886"}/
-                %input{:name => "comment_id", :type => "hidden", :value => ""}/
-                %input{:name => "redirect_url_key", :type => "hidden", :value => "item_detail"}/
-                %input{:name => "__csrf_value", :type => "hidden", :value => "c6d74b8154bde6722fa4706b572f66e5b9518c503d68d407cd894cccd479de68d2b28d31a4eaf9d47191b3d31c328490320d68080a6c0ea6cb52e9749975167de"}/
       %ul.nav-item-link-prev-next.clearfix
         %li.nav-item-link-prev
           %a{:href => "/jp/items/m94277921752/"}
