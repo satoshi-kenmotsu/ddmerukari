@@ -6,29 +6,28 @@
         .itemBox__body
           %ul
             %li
-              %img{:src => "https://s3-ap-northeast-1.amazonaws.com/mercarimaster/uploads/captured_image/content/7/a001.png"}/
+              = image_tag "https://s3-ap-northeast-1.amazonaws.com/mercarimaster/uploads/captured_image/content/7/a001.png"
               %ul
                 %li
-                  %img{:height => "75", :src => "https://s3-ap-northeast-1.amazonaws.com/mercarimaster/uploads/captured_image/content/7/a001.png", :width => "75"}/
+                  = image_tag "https://s3-ap-northeast-1.amazonaws.com/mercarimaster/uploads/captured_image/content/7/a001.png"
                 %li
-                  %img{:height => "75", :src => "https://s3-ap-northeast-1.amazonaws.com/mercarimaster/uploads/captured_image/content/8/a002.png", :width => "75"}/
+                  = image_tag "https://s3-ap-northeast-1.amazonaws.com/mercarimaster/uploads/captured_image/content/8/a002.png"
                 %li
-                  %img{:height => "75", :src => "https://s3-ap-northeast-1.amazonaws.com/mercarimaster/uploads/captured_image/content/9/a003.png", :width => "75"}/
+                  = image_tag "https://s3-ap-northeast-1.amazonaws.com/mercarimaster/uploads/captured_image/content/9/a003.png"
         %table.item-detail-table
           %tr
             %th 出品者
             %td
-              %a{:href => "https://www.mercari.com/jp/u/482177612/"} ゆう
+              = link_to "ゆう", "https://www.mercari.com/jp/u/482177612/"
           %tr
             %th カテゴリー
             %td
-              %a{:href => "https://www.mercari.com/jp/category/6/"}
-                %div コスメ・香水・美容
-              %a{:href => "https://www.mercari.com/jp/category/95/"}
+              = link_to "コスメ・香水・美容", "https://www.mercari.com/jp/category/6/"
+              = link_to "https://www.mercari.com/jp/category/95/" do
                 .item-detail-table-sub-category
                   %i.icon-arrow-right
                   その他
-              %a{:href => "https://www.mercari.com/jp/category/837/"}
+              = link_to "https://www.mercari.com/jp/category/837/" do
                 .item-detail-table-sub-sub-category
                   %i.icon-arrow-right
                   救急/衛生用品
