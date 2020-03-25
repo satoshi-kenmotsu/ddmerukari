@@ -83,4 +83,6 @@ gem 'carrierwave'
 gem 'mini_magick'
 gem 'active_hash'
 gem 'jquery-rails'
+gem 'ancestry'
 gem 'fog-aws'
+
