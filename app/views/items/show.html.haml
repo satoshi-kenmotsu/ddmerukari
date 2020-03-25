@@ -1,6 +1,7 @@
 .default-container
   %section.item-box-container.l-single-container
-    %h1.item-name ハンドメイド インナーマスク
+    %h1.item-name 
+      = @item.name
     .item-main-content.clearfix
       .itemBox__body
         %ul
@@ -33,46 +34,34 @@
         %tr
           %th ブランド
           %td
+            = @item.bland
         %tr
           %th 商品の状態
-          %td 新品、未使用
+          %td
+            = @item.status
         %tr
           %th 配送料の負担
-          %td 送料込み(出品者負担)
-        %tr
-          %th 配送の方法
-          %td 普通郵便(定形、定形外)
+          %td
+            = @item.delivery_charge
         %tr
           %th 配送元地域
-          %td 高知県
+          %td
+            = @item.prefecture
         %tr
           %th 発送日の目安
-          %td 1~2日で発送
+          %td
+            = @item.delivery_date
     .item-price-box.text-center
-      %span.item-price.bold ¥1,000
+      %span.item-price.bold
+        ¥
+        = @item.price
       %span.item-tax (税込)
       %span.item-shipping-fee 送料込み
     = link_to "https://www.mercari.com/jp/transaction/buy/m66725710886/?_s=U2FsdGVkX18AFP7runt3WvbaB7i-PUbdf59QZLt7Z7N3vvl4oRtDLmVf3P7Fjd5IdtH4vwxbCxxUeAcwHDM1k4UjxpQlVV0_ky1_DRZSPUAuhnDJm762Bzem4ZSOSHVB",class: "item-buy-btn" do
       購入画面に進む
     .item-description.f14
       %p.item-description-inner
-        ハンドメイド  インナーマスク
-        
-        マスクではありません
-        
-        2枚セット
-        素材:綿100％と裏ダブルガーゼ(ローズ)
-        サイズ:約8cm×16cm
-        
-        マスクはつきません
-        
-        マスクの内側に入れてお使いください
-        鼻にノーズワイヤーと、プリーツ入りなので使いやすいと思います
-        
-        洗濯するときは手洗いをオススメします
-        
-        素人のハンドメイドなので、多少のズレや歪みなどはご了承ください
-        完璧を求める方は購入はご遠慮ください
+        = @item.description
   .item-detail-message
     .message-container
       .message-content
