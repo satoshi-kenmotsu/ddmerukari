@@ -52,9 +52,9 @@
               %span.required
                 必須
             .kana_field
-              = f.label :last_name_kana
-              = f.text_field :last_name_kana, placeholder: "例）ヤマダ", class: "input-box"
               = f.label :first_name_kana
+              = f.text_field :last_name_kana, placeholder: "例）ヤマダ", class: "input-box"
+              = f.label :last_name_kana
               = f.text_field :first_name_kana, placeholder: "例）タロウ", class: "input-box"
           .birthday
             %h3.text 
