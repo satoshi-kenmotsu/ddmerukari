@@ -374,12 +374,14 @@
                 .style_formgroup__3IPME.sc-iNhVCk.iucczz
                   .style_body__1OP1S
                     %div{:name => "category"}
-                      .style_formLabel__3wM81.common_fontFamily__3-3Si
-                        %label カテゴリー
-                        %span.style_tag__xA80S.style_attention__3ULCL.style_small__2vSa8.common_fontFamily__3-3Si 
-                    .style_select__3R6W_.common_fontFamily__3-3Si.style_fluid__31br4
-                      .style_selectarea__3ZX8E
-                        = f.select :category, [["レディース", 0],["メンズ", 1],["ベビー", 2]]
+                      .listing-form-box
+                        .listing-product-detail__category
+                          = f.label 'カテゴリー', class: 'listing-default__label'
+                          %span.listing-default--require 必須
+                          .listing-select-wrapper
+                            .listing-select-wrapper__box
+                              = f.select :category, @category_parent_array, {}, {class: 'listing-select-wrapper__box--select', id: 'parent_category'}
+                              %i.fas.fa-chevron-down.listing-select-wrapper__box--arrow-down
                 .style_formgroup__3IPME.sc-iNhVCk.iucczz
                   .style_body__1OP1S
                     .style_formLabel__3wM81.common_fontFamily__3-3Si
