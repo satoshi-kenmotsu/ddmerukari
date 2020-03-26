@@ -399,7 +399,7 @@
                         %span.style_tag__xA80S.style_attention__3ULCL.style_small__2vSa8.common_fontFamily__3-3Si 必須
                     .style_select__3R6W_.common_fontFamily__3-3Si.style_fluid__31br4
                       .style_selectarea__3ZX8E
-                        = f.select :status, [["新品、未使用", 0],["未使用に近い", 1],["目立った傷や汚れなし", 2],["やや傷や汚れあり",3],["傷や汚れあり",4],["全体的に状態が悪い"]]
+                        = f.select :status, [["新品、未使用"],["未使用に近い"],["目立った傷や汚れなし"],["やや傷や汚れあり"],["傷や汚れあり"],["全体的に状態が悪い"]]
               %hr.style_divider__1tLu3.style_size1__3jc3t/
               .sc-cTjmhe.gMiSZt
                 %p.sc-eAKXzc.iLTrHh
@@ -415,13 +415,13 @@
                         = f.collection_select :delivery_charge, Delivery_charge.all, :id, :name
                 .style_formgroup__3IPME.sc-iNhVCk.iucczz
                   .style_body__1OP1S
-                    %div{:name => "prefecture"}
+                    %div{:name => "prefecture_id"}
                       .style_formLabel__3wM81.common_fontFamily__3-3Si
                         %label 発送元の地域
                         %span.style_tag__xA80S.style_attention__3ULCL.style_small__2vSa8.common_fontFamily__3-3Si 必須
                     .style_select__3R6W_.common_fontFamily__3-3Si.style_fluid__31br4
                       .style_selectarea__3ZX8E
-                        = f.collection_select :prefecture, Prefecture.all, :id, :name
+                        = f.collection_select :prefecture_id, Prefecture.all, :id, :name
                 .style_formgroup__3IPME.sc-iNhVCk.iucczz
                   .style_body__1OP1S
                     %div{:name => "delivery_date"}
