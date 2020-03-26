@@ -28,6 +28,7 @@ class ItemsController < ApplicationController
     @prefecture = Prefecture.find(params[:id])
     @delivery_date = Delivery_date.find(params[:id])
     @delivery_charge = Delivery_charge.find(params[:id])
+
   end
 
   def get_category_children

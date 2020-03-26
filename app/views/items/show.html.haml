@@ -22,15 +22,15 @@
         %tr
           %th カテゴリー
           %td
-            = link_to "コスメ・香水・美容", "https://www.mercari.com/jp/category/6/"
-            = link_to "https://www.mercari.com/jp/category/95/" do
+            = link_to @item.category.parent.parent.name, "#"
+            = link_to "#" do
               .item-detail-table-sub-category
                 %i.icon-arrow-right
-                その他
-            = link_to "https://www.mercari.com/jp/category/837/" do
+                = @item.category.parent.name
+            = link_to "#" do
               .item-detail-table-sub-sub-category
                 %i.icon-arrow-right
-                救急/衛生用品
+                = @item.category.name
         %tr
           %th ブランド
           %td
