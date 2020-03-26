@@ -42,7 +42,6 @@ class ItemsController < ApplicationController
     category = params.permit(:category_id)
     @item[:category_id] = category[:category_id]
   end
+  
 
-  def show
-  end
 end
