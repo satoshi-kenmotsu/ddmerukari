@@ -1,0 +1,75 @@
+.default-container
+  %section.item-box-container.l-single-container
+    %h1.item-name 
+      = @item.name
+    .item-main-content.clearfix
+      .itemBox__body
+        %ul
+          %li
+            = image_tag "https://s3-ap-northeast-1.amazonaws.com/mercarimaster/uploads/captured_image/content/7/a001.png"
+            %ul
+              %li
+                = image_tag "https://s3-ap-northeast-1.amazonaws.com/mercarimaster/uploads/captured_image/content/7/a001.png"
+              %li
+                = image_tag "https://s3-ap-northeast-1.amazonaws.com/mercarimaster/uploads/captured_image/content/8/a002.png"
+              %li
+                = image_tag "https://s3-ap-northeast-1.amazonaws.com/mercarimaster/uploads/captured_image/content/9/a003.png"
+      %table.item-detail-table
+        %tr
+          %th 出品者
+          %td
+            = link_to "ゆう", "https://www.mercari.com/jp/u/482177612/"
+        %tr
+          %th カテゴリー
+          %td
+            = link_to @item.category.parent.parent.name, "#"
+            = link_to "#" do
+              .item-detail-table-sub-category
+                %i.icon-arrow-right
+                = @item.category.parent.name
+            = link_to "#" do
+              .item-detail-table-sub-sub-category
+                %i.icon-arrow-right
+                = @item.category.name
+        %tr
+          %th ブランド
+          %td
+            = @item.bland
+        %tr
+          %th 商品の状態
+          %td
+            = @item.status
+        %tr
+          %th 配送料の負担
+          %td
+            = @delivery_charge.name
+        %tr
+          %th 配送元地域
+          %td
+            = @prefecture.name
+        %tr
+          %th 発送日の目安
+          %td
+            = @delivery_date.name
+    .item-price-box.text-center
+      %span.item-price.bold
+        ¥
+        = @item.price
+      %span.item-tax (税込)
+      %span.item-shipping-fee 送料込み
+    = link_to "https://www.mercari.com/jp/transaction/buy/m66725710886/?_s=U2FsdGVkX18AFP7runt3WvbaB7i-PUbdf59QZLt7Z7N3vvl4oRtDLmVf3P7Fjd5IdtH4vwxbCxxUeAcwHDM1k4UjxpQlVV0_ky1_DRZSPUAuhnDJm762Bzem4ZSOSHVB",class: "item-buy-btn" do
+      購入画面に進む
+    .item-description.f14
+      %p.item-description-inner
+        = @item.description
+  .item-detail-message
+    .message-container
+      .message-content
+        %form.message-form{action: "https://www.mercari.com/jp/comment/add/", method: "POST"}
+          %input{name: "__csrf_value", type: "hidden", value: "c6d74b8154bde6722fa4706b572f66e5b9518c503d68d407cd894cccd479de68d2b28d31a4eaf9d47191b3d31c328490320d68080a6c0ea6cb52e9749975167de"}/
+          %p 相手のことを考え丁寧なコメントを心がけましょう。不快な言葉遣いなどは利用制限や退会処分となることがあります。
+          %input{name: "item_id", type: "hidden", value: "m66725710886"}/
+          %input{name: "redirect_url_key", type: "hidden", value: "item_detail"}/
+          %textarea.textarea-default{name: "body", type: "text", value: ""}
+          %button.message-submit.btn-default.btn-gray{type: "submit"}
+            %span コメントする
