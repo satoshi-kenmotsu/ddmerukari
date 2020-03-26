@@ -3,6 +3,8 @@
   %head
     %meta{:content => "text/html; charset=UTF-8", "http-equiv" => "Content-Type"}/
     %title Ddmerukari
+    %script{src: "https://js.pay.jp/", type: "text/javascript"}
+    %script{type: "text/javascript"} Payjp.setPublicKey('公開鍵(pk_test_a740e62df1ab15e2fee02721)');
     = csrf_meta_tags
     = csp_meta_tag
     = stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload'
@@ -37,6 +39,17 @@
                 = link_to 'ログイン', user_session_path
               .bottom-right__create
                 = link_to '新規会員登録', new_user_registration_path
+
+
+
+
+
+
+
+
+
+
+
 
     = yield
     .banner
