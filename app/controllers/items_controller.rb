@@ -1,6 +1,9 @@
 class ItemsController < ApplicationController
   def index
-    @items = Item.includes(:images).order('created_at DESC')
+    @items = Item.includes(:images).order('created_at DESC').page(params[:page]).per(3)
+    @lady_items = Item.where(category_id: 1).where.not(business_stats: 2).limit(4).order(id: "DESC")
+    # @item_images = Item.images
+    # @item = Item.find(params[:id])
   end
 
   def new
