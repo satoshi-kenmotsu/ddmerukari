@@ -203,11 +203,11 @@
         display: flex;
         justify-content: space-around;
         .productList {
+          background-color: #fff;
           width: 220px;
           display: inline-block;
           float: left;
           a {
-            background-color: #fff;
             display: inline-block;
             .productList--img {
               width: 220px;

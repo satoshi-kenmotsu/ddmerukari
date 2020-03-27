@@ -85,4 +85,4 @@ gem 'active_hash'
 gem 'jquery-rails'
 gem 'ancestry'
 gem 'fog-aws'
-
+gem 'kaminari'
