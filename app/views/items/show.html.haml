@@ -4,16 +4,22 @@
       = @item.name
     .item-main-content.clearfix
       .itemBox__body
-        %ul
-          %li
-            = image_tag "https://s3-ap-northeast-1.amazonaws.com/mercarimaster/uploads/captured_image/content/7/a001.png"
-            %ul
-              %li
-                = image_tag "https://s3-ap-northeast-1.amazonaws.com/mercarimaster/uploads/captured_image/content/7/a001.png"
-              %li
-                = image_tag "https://s3-ap-northeast-1.amazonaws.com/mercarimaster/uploads/captured_image/content/8/a002.png"
-              %li
-                = image_tag "https://s3-ap-northeast-1.amazonaws.com/mercarimaster/uploads/captured_image/content/9/a003.png"
+        .first-item
+          -@item_images.each_with_index do |get, index|
+            .first-item__box
+              -if index == 0
+                =image_tag get.src.url,class: 'first-item__box--img'
+                .other-item
+                  -@item_images.each_with_index do |get, index|
+                    .other-item__first
+                      -if index == 1
+                        =image_tag get.src.url
+                    .other-item__second
+                      -if index == 2
+                        =image_tag get.src.url
+                    .other-item_third
+                      -if index == 3
+                        =image_tag get.src.url 
       %table.item-detail-table
         %tr
           %th 出品者
@@ -42,21 +48,21 @@
         %tr
           %th 配送料の負担
           %td
-            = @delivery_charge.name
+            = @item.delivery_charge.name
         %tr
           %th 配送元地域
           %td
-            = @prefecture.name
+            = @item.prefecture.name
         %tr
           %th 発送日の目安
           %td
-            = @delivery_date.name
+            = @item.delivery_date.name
     .item-price-box.text-center
-      %span.item-price.bold
+      .item-price.bold
         ¥
         = @item.price
-      %span.item-tax (税込)
-      %span.item-shipping-fee 送料込み
+      .item-tax (税込)
+      .item-shipping-fee 送料込み
     = link_to "https://www.mercari.com/jp/transaction/buy/m66725710886/?_s=U2FsdGVkX18AFP7runt3WvbaB7i-PUbdf59QZLt7Z7N3vvl4oRtDLmVf3P7Fjd5IdtH4vwxbCxxUeAcwHDM1k4UjxpQlVV0_ky1_DRZSPUAuhnDJm762Bzem4ZSOSHVB",class: "item-buy-btn" do
       購入画面に進む
     .item-description.f14

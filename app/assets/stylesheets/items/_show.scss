@@ -15,43 +15,28 @@
     }
     .clearfix {
       margin: 16px 0 0;
+      display: flex;
         .itemBox__body {
-          float: left;
-          float: left;
           min-width: 300px;
           max-width: 300px;
           min-height: 375px;
-          ul {
+          .first-item {
             display: flex;
             position: relative;
-            li {
+            &__box {
               display: flex;
               flex-direction: column;
               width: 560px;
               align-items: center;
               margin: 0 auto;
-              img {
-                object-fit: cover;
-                height: 346px;
-                width: 100%;
-                vertical-align: bottom;
-              }
-              ul {
-                display: flex;
-                justify-content: center;
-                margin-top: 10px;
-                li {
-                  width: 25%;
-                  margin: 0 10px 0 0;
-                  flex-direction: column;
-                  img {
-                    width: 100%;
-                    object-fit: cover;
-                    height: 87px;
-                  }
-                }
+              &--img{
+                width: 300px;
+                height: 300px;
               }
             }
+          }
+          .other-item{
+            display: flex;
           }
         }
       table {
@@ -78,8 +63,9 @@
       }
     }
     .text-center {
-      margin: 24px 0 0;
       text-align: center;
+      display: flex;
+      padding: 10px 50px 0px 190px;
       .bold {
         margin: 0 16px 0 0;
         font-size: 50px;
@@ -87,10 +73,12 @@
       }
       .item-tax {
         font-size: 10px;
+        padding-top: 36px;
       }
       .item-shipping-fee {
         display: inline-block;
         font-size: 16px;
+        padding-top: 30px;
       }
     }
     .item-buy-btn {
