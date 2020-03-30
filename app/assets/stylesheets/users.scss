@@ -247,7 +247,33 @@
               font-weight: 600;
             }
             .birthday_field{
-              .input-box{
+              #user_birth_year{
+                width: 76px;
+                height: 48px;
+                border-radius: 4px;
+                border: 1px solid #ccc;
+                background: #fff;
+                line-height: 1.5;
+                font-size: 16px;
+                margin: 8px 0 0;
+              }
+              label{
+                display: none;
+              }
+              #user_birth_month{
+                width: 76px;
+                height: 48px;
+                border-radius: 4px;
+                border: 1px solid #ccc;
+                background: #fff;
+                line-height: 1.5;
+                font-size: 16px;
+                margin: 8px 0 0;
+              }
+              label{
+                display: none;
+              }
+              #user_birth_day{
                 width: 76px;
                 height: 48px;
                 border-radius: 4px;
