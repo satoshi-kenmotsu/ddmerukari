@@ -12,4 +12,8 @@ class User < ApplicationRecord
             }
   has_one :address
   has_many :cards 
+  # extend ActiveHash::Associations::ActiveRecordExtensions
+  # belongs_to_active_hash :birth_year
+  # belongs_to_active_hash :birth_month
+  # belongs_to_active_hash :birth_day
 end
