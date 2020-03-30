@@ -26,10 +26,7 @@ class ItemsController < ApplicationController
 
   def show
     @item = Item.find(params[:id])
-    @prefecture = Prefecture.find(params[:id])
-    @delivery_date = Delivery_date.find(params[:id])
-    @delivery_charge = Delivery_charge.find(params[:id])
-
+    @item_images = @item.images
   end
 
   def get_category_children
@@ -44,7 +41,7 @@ class ItemsController < ApplicationController
   
   private
   def item_params
-    params.require(:item).permit(:name, :description, :bland, :category_id, :status, :delivery_charge, :prefecture_id, :delivery_date, :price, images_attributes: [:src])
+    params.require(:item).permit(:name, :description, :bland, :category_id, :status, :delivery_charge_id, :prefecture_id, :delivery_date_id, :price, images_attributes: [:src])
   end
 
   def category_id_params
