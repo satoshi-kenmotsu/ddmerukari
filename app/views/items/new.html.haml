@@ -303,19 +303,19 @@
       \.kmHFjK{font-size:12px;}
   %body
     %noscript
-      %iframe{:height => "0", :src => "https://www.googletagmanager.com/ns.html?id=GTM-KLPT5L5", :style => "display:none;visibility:hidden", :title => "googletagmanager", :width => "0"}
+      %iframe{height: "0", :src => "https://www.googletagmanager.com/ns.html?id=GTM-KLPT5L5", style: "display:none;visibility:hidden", title: "googletagmanager", :width => "0"}
     #__next
       .sc-cqPOvA.feiCiN
         .sc-gNJABI.gMbpOw
-          %a.sc-fihHvN.fIpNlZ{:href => "/jp/"}
-            %img.sc-yZwTr.gBkKhI{:alt => "Mercari", :src => "http://furima.tokyo/assets/logo-d3d78326971d78b06e3d6f0ba666d025a8ad681286b4d9e00e7dbe8673bcfd23.svg"}/
+          %a.sc-fihHvN.fIpNlZ{href: "/jp/"}
+            %img.sc-yZwTr.gBkKhI{alt: "Mercari", src: "http://furima.tokyo/assets/logo-d3d78326971d78b06e3d6f0ba666d025a8ad681286b4d9e00e7dbe8673bcfd23.svg"}/
         .sc-fAjcbJ.iYiELi.sc-fjhmcy.dKjbVH
           .sc-caSCKo.OLMic
             = form_for @item, :multipart => true do |f|
               .sc-cTjmhe.gMiSZt
                 .style_formgroup__3IPME.sc-iNhVCk.iucczz
                   .style_body__1OP1S
-                    %div{:name => "photos"}
+                    %div{name: "photos"}
                       .style_formLabel__3wM81.common_fontFamily__3-3Si
                         %label 出品画像
                         %span.style_tag__xA80S.style_attention__3ULCL.style_small__2vSa8.common_fontFamily__3-3Si 必須
@@ -327,7 +327,7 @@
                       枚までアップロードできます
                     .sc-jKmXuR.bMWfXa.style_controls__B6nQm
                       .sc-iIHSe.ffWsft{"data-test" => "sell-upload-container"}
-                        .sc-dHmInP.bsOdb{:tabindex => "0"}
+                        .sc-dHmInP.bsOdb{tabindex: "0"}
                           .sc-ejGVNB.hsmaqh
                             #image-box
                               #previews
@@ -337,7 +337,7 @@
                               = f.fields_for :images do |image|
                                 .js-file_group{"data-index" => "#{image.index}"}
                                   = image.file_field :src, class: 'js-file'
-                            %input.sc-eLdqWK.jrNxLO{:accept => "image/png,image/jpeg", :autocomplete => "off", :multiple => "multiple", :style => "display:none", :tabindex => "-1", :type => "file"}/
+                            %input.sc-eLdqWK.jrNxLO{accept: "image/png,image/jpeg", autocomplete: "off", multiple: "multiple", style: "display:none", tabindex: "-1", type: "file"}/
                             %svg.sc-hgRTRy.eESUAP{"aria-hidden" => "true", :fill => "#222222", "fill-rule" => "evenodd", :height => "24", :viewbox => "0 0 24 24", :width => "24"}
                               %path{:d => "M19.3,5H16.73l-.8-1.61A.7.7,0,0,0,15.3,3H8.7a.7.7,0,0,0-.63.39L7.27,5H4.7A2.7,2.7,0,0,0,2,7.7V18.3A2.7,2.7,0,0,0,4.7,21H19.3A2.7,2.7,0,0,0,22,18.3V7.7A2.7,2.7,0,0,0,19.3,5ZM12,17.3A4.3,4.3,0,1,1,16.3,13,4.31,4.31,0,0,1,12,17.3Z"}
                             %p.sc-iiUIRa.joAKll
@@ -348,7 +348,7 @@
               .sc-cTjmhe.gMiSZt
                 .style_formgroup__3IPME.sc-iNhVCk.iucczz
                   .style_body__1OP1S
-                    %div{:name => "name"}
+                    %div{name: "name"}
                       .style_formLabel__3wM81.common_fontFamily__3-3Si
                         %label 商品名
                         %span.style_tag__xA80S.style_attention__3ULCL.style_small__2vSa8.common_fontFamily__3-3Si 必須
@@ -357,7 +357,7 @@
                         =f.text_field :name, placeholder: '40文字まで' 
                 .style_formgroup__3IPME.sc-iNhVCk.iucczz
                   .style_body__1OP1S
-                    %div{:name => "description"}
+                    %div{name: "description"}
                       .style_formLabel__3wM81.common_fontFamily__3-3Si
                         %label 商品の説明
                         %span.style_tag__xA80S.style_attention__3ULCL.style_small__2vSa8.common_fontFamily__3-3Si 必須
@@ -373,7 +373,7 @@
                 %p.sc-eAKXzc.iLTrHh 商品の詳細
                 .style_formgroup__3IPME.sc-iNhVCk.iucczz
                   .style_body__1OP1S
-                    %div{:name => "category"}
+                    %div{name: "category"}
                       .listing-form-box
                         .listing-product-detail__category
                           = f.label 'カテゴリー', class: 'listing-default__label'
@@ -393,7 +393,7 @@
                     %ul.sc-jbKcbu.cApMkI.sc-bfYoXt.evZoVs.style_controls__B6nQm
                 .style_formgroup__3IPME.sc-iNhVCk.iucczz
                   .style_body__1OP1S
-                    %div{:name => "status"}
+                    %div{name: "status"}
                       .style_formLabel__3wM81.common_fontFamily__3-3Si
                         %label 商品の状態
                         %span.style_tag__xA80S.style_attention__3ULCL.style_small__2vSa8.common_fontFamily__3-3Si 必須
@@ -406,16 +406,16 @@
                   配送について
                 .style_formgroup__3IPME.sc-iNhVCk.iucczz
                   .style_body__1OP1S
-                    %div{:name => "delivery_charge"}
+                    %div{name: "delivery_charge_id"}
                       .style_formLabel__3wM81.common_fontFamily__3-3Si
                         %label 配送料の負担
                         %span.style_tag__xA80S.style_attention__3ULCL.style_small__2vSa8.common_fontFamily__3-3Si 必須
                     .style_select__3R6W_.common_fontFamily__3-3Si.style_fluid__31br4
                       .style_selectarea__3ZX8E
-                        = f.collection_select :delivery_charge, Delivery_charge.all, :id, :name
+                        = f.collection_select :delivery_charge_id, DeliveryCharge.all, :id, :name
                 .style_formgroup__3IPME.sc-iNhVCk.iucczz
                   .style_body__1OP1S
-                    %div{:name => "prefecture_id"}
+                    %div{name: "prefecture_id"}
                       .style_formLabel__3wM81.common_fontFamily__3-3Si
                         %label 発送元の地域
                         %span.style_tag__xA80S.style_attention__3ULCL.style_small__2vSa8.common_fontFamily__3-3Si 必須
@@ -424,13 +424,13 @@
                         = f.collection_select :prefecture_id, Prefecture.all, :id, :name
                 .style_formgroup__3IPME.sc-iNhVCk.iucczz
                   .style_body__1OP1S
-                    %div{:name => "delivery_date"}
+                    %div{name: "delivery_date_id"}
                       .style_formLabel__3wM81.common_fontFamily__3-3Si
                         %label 発送までの日数
                         %span.style_tag__xA80S.style_attention__3ULCL.style_small__2vSa8.common_fontFamily__3-3Si 必須
                     .style_select__3R6W_.common_fontFamily__3-3Si.style_fluid__31br4
                       .style_selectarea__3ZX8E
-                        = f.collection_select :delivery_date, Delivery_date.all, :id, :name
+                        = f.collection_select :delivery_date_id, DeliveryDate.all, :id, :name
               %hr.style_divider__1tLu3.style_size1__3jc3t/
               .sc-ecaExY.dUOaAv
                 %p.sc-eAKXzc.iLTrHh
@@ -445,7 +445,7 @@
                   ）
                 .sc-cBrjTV.ijbKwt
                   .sc-jdeSqf.cFLFtx
-                    .sc-jMMfwr.hNJeyH{:name => "price"}
+                    .sc-jMMfwr.hNJeyH{name: "price"}
                       .style_formLabel__3wM81.common_fontFamily__3-3Si
                         %label 販売価格
                         %span.style_tag__xA80S.style_attention__3ULCL.style_small__2vSa8.common_fontFamily__3-3Si 必須
