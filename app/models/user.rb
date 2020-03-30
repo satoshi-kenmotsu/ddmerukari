@@ -11,5 +11,5 @@ class User < ApplicationRecord
               message: "全角のみで入力して下さい"
             }
   has_one :address
-  
+  has_many :cards 
 end
