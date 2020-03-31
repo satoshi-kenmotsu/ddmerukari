@@ -35,10 +35,9 @@ class ItemsController < ApplicationController
      # 親セレクトボックスの初期値(配列)
      @category_parent_array = []
      # categoriesテーブルから親カテゴリーのみを抽出、配列に格納
-     Category.where(ancestry: nil).pluck(:name).each do |parent|
-       @category_parent_array << parent
-     end
- 
+     array = Category.where(ancestry: nil).pluck(:name)
+     @category_parent_array.push(array)
+     @category_parent_array.flatten!
      # itemに紐づいていいる孫カテゴリーの親である子カテゴリが属している子カテゴリーの一覧を配列で取得
      @category_child_array = @item.category.parent.parent.children
  
