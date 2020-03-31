@@ -60,11 +60,10 @@ ActiveRecord::Schema.define(version: 2020_03_30_053732) do
     t.datetime "updated_at", null: false
     t.bigint "category_id"
     t.integer "prefecture_id"
-    t.bigint "seller_id"
-    t.bigint "Buyer_id"
-
     t.integer "delivery_date_id", null: false
     t.integer "delivery_charge_id", null: false
+    t.bigint "seller_id"
+    t.bigint "Buyer_id"
     t.index ["Buyer_id"], name: "index_items_on_Buyer_id"
     t.index ["category_id"], name: "index_items_on_category_id"
     t.index ["seller_id"], name: "index_items_on_seller_id"
