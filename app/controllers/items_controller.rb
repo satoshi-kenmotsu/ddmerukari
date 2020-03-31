@@ -30,6 +30,32 @@ class ItemsController < ApplicationController
     @item_images = @item.images
   end
 
+  def edit
+    @item = Item.find(params[:id])
+     # 親セレクトボックスの初期値(配列)
+     @category_parent_array = []
+     # categoriesテーブルから親カテゴリーのみを抽出、配列に格納
+     Category.where(ancestry: nil).each do |parent|
+       @category_parent_array << parent.name
+     end
+ 
+     # itemに紐づいていいる孫カテゴリーの親である子カテゴリが属している子カテゴリーの一覧を配列で取得
+     @category_child_array = @item.category.parent.parent.children
+ 
+     # itemに紐づいていいる孫カテゴリーが属している孫カテゴリーの一覧を配列で取得
+     @category_grandchild_array = @item.category.parent.children
+  end
+
+  def update
+    @item = Item.find(params[:id])
+    category_id_params
+    if @item.update(item_params)
+      redirect_to root_path
+    else
+      redirect_to edit_item_path
+    end
+  end
+
   def get_category_children
     #選択された親カテゴリーに紐付く子カテゴリーの配列を取得
     @category_children = Category.find_by(name: "#{params[:parent_name]}", ancestry: nil).children
