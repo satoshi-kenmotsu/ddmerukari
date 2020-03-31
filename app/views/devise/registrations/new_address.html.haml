@@ -18,6 +18,7 @@
             %span.required
               必須
             %br/
+            -# = f.collection_select :prefecture, Prefecture.all, :id, :name
             = f.text_field :prefecture, class: "input-field"
           .field
             = f.label :city, "市町村"

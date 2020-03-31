@@ -1,6 +1,9 @@
 @mixin furimacolor {
   background-color: #3CCACE;
 }
+@mixin bgc_white {
+  background-color: white;
+}
 
 
 
@@ -149,20 +152,24 @@
 
 
 .content__title {
-width: 100%;
+width: 50%;
 text-align: center;
+margin: 0 auto;
 font-weight: bold;
 font-size: 24px;
+@include bgc_white;
+border-bottom: 1px solid #f5f5f5;;
 
 
 }
 
 .credit_list {
-  margin-top: 100px;
-  width: 500px;
-  height: 550px;
-  margin: 50px auto;
+  padding-top: 50px;
+  width: 50%;
+  height: 350px;
+  margin: 0 auto;
   text-align: center;
+  @include bgc_white;
 
   
   .content__credit-cards {
@@ -187,8 +194,6 @@ font-size: 24px;
       color: white;
       border-radius: 5%;
     }
-    &__list {
-      li {
         &__list__remove {
           width: 150px;
           margin-top: 20px;
@@ -199,7 +204,5 @@ font-size: 24px;
         }
       }
     }
-  }
-}
 
 

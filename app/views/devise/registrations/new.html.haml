@@ -24,13 +24,13 @@
             %span.required
               必須
             %br/
-            = f.password_field :password, autocomplete: "new-password", class: "input-field", placeholder: "#{@minimum_password_length}文字以上"
+            = f.password_field :password, autocomplete: "new-password", class: "input-field", placeholder: "7文字以上"
           .field
             = f.label :password_confirmation, "パスワード（確認）"
             %span.required
               必須
             %br/
-            = f.password_field :password_confirmation, autocomplete: "new-password", class: "input-field", placeholder: "#{@minimum_password_length}文字以上"
+            = f.password_field :password_confirmation, autocomplete: "new-password", class: "input-field", placeholder: "7文字以上"
           .sub-title
             %h3.title
               本人確認
@@ -63,15 +63,15 @@
                 必須
             .birthday_field
               = f.label :birth_year
-              = f.text_field :birth_year, class: "input-box", placeholder: "例）2012"
+              = f.collection_select :birth_year, BirthYear.all, :id, :name
               %span.text
                 年
               = f.label :birth_month
-              = f.number_field :birth_month, class: "input-box", placeholder: "例）11"
+              = f.collection_select :birth_month, BirthMonth.all, :id, :name
               %span.text
                 月
               = f.label :birth_day
-              = f.number_field :birth_day, class: "input-box", placeholder: "例）24"
+              = f.collection_select :birth_day, BirthDay.all, :id, :name
               %span.text
                 日
           .actions
