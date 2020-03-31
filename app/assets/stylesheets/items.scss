@@ -259,3 +259,39 @@ a {
 
   }
 }
+
+.edit_listing-select-wrapper{
+  &__box{
+    margin-top: 16px;
+    
+    &--select{
+      align-items: center;
+      display: inline-flex;
+      width: 100%;
+      background-color: #fff;
+      border: 1px solid #ccc;
+      border-radius: 4px;
+      box-sizing: border-box;
+      color: #222;
+      font-size: 16px;
+      height: 48px;
+      line-height: 1;
+      margin: 0;
+      outline: none;
+      padding: 0 56px 0 16px;
+      width: 100%;
+    }
+  }
+
+}
+
+.item-edit-btn{
+  font-size: 24px;
+  line-height: 60px;
+  display: block;
+  margin-top: 16px;
+  background: #ea352d;
+  color: #fff;
+  text-align: center;
+  font-weight: 600;
+}

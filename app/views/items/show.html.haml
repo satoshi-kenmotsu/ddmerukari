@@ -63,8 +63,12 @@
         = @item.price
       .item-tax (税込)
       .item-shipping-fee 送料込み
-    = link_to "https://www.mercari.com/jp/transaction/buy/m66725710886/?_s=U2FsdGVkX18AFP7runt3WvbaB7i-PUbdf59QZLt7Z7N3vvl4oRtDLmVf3P7Fjd5IdtH4vwxbCxxUeAcwHDM1k4UjxpQlVV0_ky1_DRZSPUAuhnDJm762Bzem4ZSOSHVB",class: "item-buy-btn" do
-      購入画面に進む
+    - if (user_signed_in? && @item.seller_id == current_user.id)
+      = link_to edit_item_path(@item), class: "item-edit-btn" do
+        編集
+    -else
+      = link_to "#",class: "item-buy-btn" do
+        購入画面に進む
     .item-description.f14
       %p.item-description-inner
         = @item.description
