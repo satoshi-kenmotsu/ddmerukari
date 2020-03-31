@@ -1,4 +1,6 @@
 class ItemsController < ApplicationController
+  before_action :set_item, only: [:edit, :show, :update]
+
   def index
     @items = Item.includes(:images).order('created_at DESC').page(params[:page]).per(3)
     @lady_items = Item.where(category_id: 1).where.not(business_stats: 2).limit(4).order(id: "DESC")
@@ -25,18 +27,16 @@ class ItemsController < ApplicationController
   end
 
   def show
-    @item = Item.find(params[:id])
     @user = User.find(@item.seller_id)
     @item_images = @item.images
   end
 
   def edit
-    @item = Item.find(params[:id])
      # 親セレクトボックスの初期値(配列)
      @category_parent_array = []
      # categoriesテーブルから親カテゴリーのみを抽出、配列に格納
-     Category.where(ancestry: nil).each do |parent|
-       @category_parent_array << parent.name
+     Category.where(ancestry: nil).pluck(:name).each do |parent|
+       @category_parent_array << parent
      end
  
      # itemに紐づいていいる孫カテゴリーの親である子カテゴリが属している子カテゴリーの一覧を配列で取得
@@ -47,7 +47,6 @@ class ItemsController < ApplicationController
   end
 
   def update
-    @item = Item.find(params[:id])
     category_id_params
     if @item.update(item_params)
       redirect_to root_path
@@ -76,5 +75,8 @@ class ItemsController < ApplicationController
     @item[:category_id] = category[:category_id]
   end
   
+  def set_item
+    @item = Item.find(params[:id])
+  end
 
 end
