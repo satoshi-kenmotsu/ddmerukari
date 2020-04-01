@@ -19,4 +19,5 @@ class User < ApplicationRecord
   # belongs_to_active_hash :birth_year
   # belongs_to_active_hash :birth_month
   # belongs_to_active_hash :birth_day
+  has_many :comments
 end
