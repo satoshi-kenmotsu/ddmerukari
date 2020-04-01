@@ -30,6 +30,8 @@ class ItemsController < ApplicationController
   def show
     @user = User.find(@item.seller_id)
     @item_images = @item.images
+    @comment = Comment.new
+    @comments = @item.comments.includes(:user)
   end
 
   def edit

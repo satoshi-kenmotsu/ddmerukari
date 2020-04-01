@@ -20,6 +20,7 @@ Rails.application.routes.draw do
       post 'pay', to: 'items#pay'
       get 'done', to: 'items#done'
     end
+    resources :comments, only: :create
   end
   # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
 end
