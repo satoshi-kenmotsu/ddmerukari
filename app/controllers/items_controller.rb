@@ -1,5 +1,6 @@
 class ItemsController < ApplicationController
-  before_action :set_item, only: [:edit, :show, :update]
+  before_action :set_item, only: [:edit, :show, :update, :purchase, :pay, :done]
+  require 'payjp'
 
   def index
     @items = Item.includes(:images).order('created_at DESC').page(params[:page]).per(3)
@@ -64,6 +65,45 @@ class ItemsController < ApplicationController
     @category_grandchildren = Category.find("#{params[:child_id]}").children
   end
   
+
+  def purchase
+    @item_images = @item.images
+
+    card = Card.where(user_id: current_user.id).first
+    #Cardテーブルは前回記事で作成、テーブルからpayjpの顧客IDを検索
+    if card.blank?
+      #登録された情報がない場合にカード登録画面に移動
+      redirect_to controller: "card", action: "new"
+    else
+      Payjp.api_key = ENV["PAYJP_SECRET_KEY"]
+      #保管した顧客IDでpayjpから情報取得
+      customer = Payjp::Customer.retrieve(card.customer_id)
+      #保管したカードIDでpayjpから情報取得、カード情報表示のためインスタンス変数に代入
+      @default_card_information = customer.cards.retrieve(card.card_id)
+    end
+  end
+
+  def pay
+    card = Card.where(user_id: current_user.id).first
+    Payjp.api_key = ENV['PAYJP_SECRET_KEY']
+    charge = Payjp::Charge.create(
+    amount: @item.price, #支払金額を入力（itemテーブル等に紐づけても良い）
+    customer: card.customer_id, #顧客ID
+    currency: 'jpy', #日本円
+  )
+
+  @item.update( Buyer_id: current_user.id)
+  redirect_to action: 'done' #完了画面に移動
+  end
+
+  def done
+
+  end
+
+
+
+
+
   private
   def item_params
     params.require(:item).permit(:name, :description, :bland, :category_id, :status, :delivery_charge_id, :prefecture_id, :delivery_date_id, :price, images_attributes: [:src, :_destroy, :id]).merge(seller_id: current_user.id)
@@ -76,6 +116,17 @@ class ItemsController < ApplicationController
   
   def set_item
     @item = Item.find(params[:id])
+  end
+
+
+
+  def item_params_pay
+    params.require(:item).permit(
+      :name,
+      :text,
+      :price,
+      #この辺の他コードは関係ない部分なので省略してます
+    ).merge(user_id: current_user.id)
   end
 
 end
