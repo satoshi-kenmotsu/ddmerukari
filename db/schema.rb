@@ -10,11 +10,10 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2020_03_30_053732) do
+ActiveRecord::Schema.define(version: 2020_04_01_080057) do
 
   create_table "addresses", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
     t.string "post_number", null: false
-    t.string "prefecture", null: false
     t.string "city", null: false
     t.string "house_number", null: false
     t.string "building"
@@ -22,6 +21,7 @@ ActiveRecord::Schema.define(version: 2020_03_30_053732) do
     t.bigint "user_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.integer "prefecture_id"
     t.index ["user_id"], name: "index_addresses_on_user_id"
   end
 
@@ -75,9 +75,9 @@ ActiveRecord::Schema.define(version: 2020_03_30_053732) do
     t.string "first_name_kana", null: false
     t.string "last_name", null: false
     t.string "last_name_kana", null: false
-    t.integer "birth_year", null: false
-    t.integer "birth_month", null: false
-    t.integer "birth_day", null: false
+    t.integer "birth_year_id", null: false
+    t.integer "birth_month_id", null: false
+    t.integer "birth_day_id", null: false
     t.string "email", default: "", null: false
     t.string "encrypted_password", default: "", null: false
     t.string "reset_password_token"

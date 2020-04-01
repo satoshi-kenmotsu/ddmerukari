@@ -31,11 +31,11 @@
               必須
             %br/
             = f.password_field :password_confirmation, autocomplete: "new-password", class: "input-field", placeholder: "7文字以上"
-          .sub-title
-            %h3.title
-              本人確認
-            %p.text
-              安心・安全にご利用いただくために、お客さまの本人情報の登録にご協力ください。他のお客さまに公開されることはありません。
+          -# .sub-title
+          -#   %h3.title
+          -#     本人確認
+          -#   %p.text
+          -#     安心・安全にご利用いただくために、お客さまの本人情報の登録にご協力ください。他のお客さまに公開されることはありません。
           .name
             %h3.text 
               お名前（全角)
@@ -63,15 +63,15 @@
                 必須
             .birthday_field
               = f.label :birth_year
-              = f.collection_select :birth_year, BirthYear.all, :id, :name
+              = f.collection_select :birth_year_id, BirthYear.all, :id, :name
               %span.text
                 年
               = f.label :birth_month
-              = f.collection_select :birth_month, BirthMonth.all, :id, :name
+              = f.collection_select :birth_month_id, BirthMonth.all, :id, :name
               %span.text
                 月
               = f.label :birth_day
-              = f.collection_select :birth_day, BirthDay.all, :id, :name
+              = f.collection_select :birth_day_id, BirthDay.all, :id, :name
               %span.text
                 日
           .actions

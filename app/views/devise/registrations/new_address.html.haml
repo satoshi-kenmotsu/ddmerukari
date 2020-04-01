@@ -12,30 +12,30 @@
             %span.required
               必須
             %br/
-            = f.text_field :post_number, class: "input-field"
+            = f.text_field :post_number, class: "input-field", placeholder: "例）123-4567"
           .field
-            = f.label :prefecture, "都道府県"
+            = f.label :prefecture_id, "都道府県"
             %span.required
               必須
             %br/
-            -# = f.collection_select :prefecture, Prefecture.all, :id, :name
-            = f.text_field :prefecture, class: "input-field"
+            = f.collection_select :prefecture_id, Prefecture.all, :id, :name
+            -# = f.text_field :prefecture, class: "input-field"
           .field
             = f.label :city, "市町村"
             %span.required
               必須
             %br/
-            = f.text_field :city, class: "input-field"
+            = f.text_field :city, class: "input-field", placeholder: "例）横浜市緑区"
           .field
             = f.label :house_number, "住所"
             %span.required
               必須
             %br/
-            = f.text_field :house_number, class: "input-field"
+            = f.text_field :house_number, class: "input-field", placeholder: "例）青山1-1-1"
           .field
             = f.label :building, "建物名・部屋番号"
             %br/
-            = f.text_field :building, class: "input-field"
+            = f.text_field :building, class: "input-field", placeholder: "例）柳ビル103"
           .field
             = f.label :telephone, "電話番号"
             %br/
