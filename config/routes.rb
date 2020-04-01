@@ -5,6 +5,8 @@ Rails.application.routes.draw do
   devise_scope :user do
     get 'addresses', to: 'users/registrations#new_address'
     post 'addresses', to: 'users/registrations#create_address'
+    get "show", to: "users/registrations#show"
+    get "logout", to: "users/registrations#logout"
   end
   root 'items#index'
   resources :cards, only: [:index, :new, :create, :destroy]

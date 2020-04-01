@@ -1,0 +1,16 @@
+.mypage
+  = render 'left-bar'
+  .mypage__right
+    .mypage__right__user_name
+      .mypage__right__user_name__upper
+        = current_user.nickname
+        さん
+      .mypage__right__user_name__lower
+        .mypage__right__user_name__lower__left
+          評価 0
+        .mypage__right__user_name__lower__right
+          出品数 0
+    .mypage__right__buy-item
+      .mypage__right__buy-item__head
+        購入した商品
+      .mypage__right__buy-item__content

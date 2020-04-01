@@ -33,6 +33,7 @@
             - if user_signed_in?
               .bottom-right__create
                 = link_to 'ログアウト', destroy_user_session_path, method: :delete
+                = link_to "マイページ", show_path
             - else
               .bottom-right__login
                 = link_to 'ログイン', user_session_path
