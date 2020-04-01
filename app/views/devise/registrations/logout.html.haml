@@ -1,0 +1,5 @@
+.mypage
+  = render 'left-bar'
+  .right_area
+    .right_area__logout-btn
+      = link_to 'ログアウト', destroy_user_session_path, method: :delete

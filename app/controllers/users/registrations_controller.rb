@@ -39,8 +39,11 @@ class Users::RegistrationsController < Devise::RegistrationsController
     redirect_to :root
   end
 
+  def show
+  end
 
-
+  def logout
+  end
   # GET /resource/edit
   # def edit
   #   super
