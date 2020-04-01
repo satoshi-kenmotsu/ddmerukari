@@ -6,7 +6,7 @@ class CardsController < ApplicationController
   # indexアクションはここでは省略
   def index #CardのデータをPayjpに送って情報を取り出す
    if @card.present?
-     Payjp.api_key = ENV["PAYJP_SECRET_KEY"]
+    Payjp.api_key = Rails.application.credentials.payjp[:sk_test]
      customer = Payjp::Customer.retrieve(@card.customer_id)
      @card_information = customer.cards.retrieve(@card.card_id)
 
@@ -38,8 +38,7 @@ class CardsController < ApplicationController
 
 
   def create #PayjpとCardのデータベースを作成
-    Payjp.api_key = ENV["PAYJP_SECRET_KEY"]
-
+    Payjp.api_key = Rails.application.credentials.payjp[:sk_test]
     if params['payjp-token'].blank?
       redirect_to action: "new"
     else
@@ -61,7 +60,7 @@ class CardsController < ApplicationController
 
 
   def destroy #PayjpとCardのデータベースを削除
-    Payjp.api_key = ENV["PAYJP_SECRET_KEY"]
+    Payjp.api_key = Rails.application.credentials.payjp[:sk_test]
     customer = Payjp::Customer.retrieve(@card.customer_id)
     customer.delete
     if @card.destroy #削除に成功した時にポップアップを表示します。
