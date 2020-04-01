@@ -94,6 +94,10 @@
                 - item.images.each_with_index do |image, index|
                   - if index == 0
                     = image_tag image.src.url
+                  -if item.Buyer_id.present?
+                    .soldout_label
+                      .soldout_label__text
+                        SOLD
               .productList--body
                 %h3.name
                   = item.name
@@ -116,6 +120,10 @@
                 - item.images.each_with_index do |image, index|
                   - if index == 0
                     = image_tag image.src.url
+                  -if item.Buyer_id.present?
+                    .soldout_label
+                      .soldout_label__text
+                        SOLD
               .productList--body
                 %h3.name
                   = item.name
