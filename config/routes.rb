@@ -8,10 +8,15 @@ Rails.application.routes.draw do
   end
   root 'items#index'
   resources :cards, only: [:index, :new, :create, :destroy]
-  resources :items, only: [:index, :new, :create, :show, :edit, :update] do
+  resources :items, only: [:index, :new, :create, :show, :edit, :update, :purchase] do
     collection do
       get 'get_category_children', defaults: { format: 'json' }
       get 'get_category_grandchildren', defaults: { format: 'json' }
+    end
+    member do
+      get 'purchase', to: 'items#purchase'
+      post 'pay', to: 'items#pay'
+      get 'done', to: 'items#done'
     end
   end
   # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
