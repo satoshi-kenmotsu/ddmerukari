@@ -15,8 +15,8 @@ class User < ApplicationRecord
   has_many :saling_items, -> { where("Buyer_id is NULL") }, foreign_key: "seller_id", class_name: "Item"
   has_many :sold_items, -> { where("Buyer_id is not NULL") }, foreign_key: "seller_id", class_name: "Item"
   has_many :cards 
-  # extend ActiveHash::Associations::ActiveRecordExtensions
-  # belongs_to_active_hash :birth_year
-  # belongs_to_active_hash :birth_month
-  # belongs_to_active_hash :birth_day
+  extend ActiveHash::Associations::ActiveRecordExtensions
+  belongs_to_active_hash :birth_year
+  belongs_to_active_hash :birth_month
+  belongs_to_active_hash :birth_day
 end

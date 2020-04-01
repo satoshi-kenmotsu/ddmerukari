@@ -22,7 +22,7 @@
               %input#searchInput.searchBox--input(name="key" placeholder="キーワードから探す")/
               %form.button_to(action="/?type=submit" method="post")
               %button(type="submit")
-                = link_to image_tag('/assets/material/icon/icon-search 1.png')
+                = link_to icon('fas', 'search', class: 'search-icon')
         .header__inner--bottom
           .bottom-left
             .bottom-left__category
@@ -89,9 +89,8 @@
       .footer__logo
         = link_to image_tag('http://furima.tokyo/assets/logo-white-f61961ed5170064c5f33dd4524bdceeb5a5df2c83eb76fba31143f63fbab2c5e.svg')
       %p &copy;FURIMA
-
       = link_to  new_item_path do
         .syuppin
           .syuppin__content
             %p 出品する
-            = link_to image_tag('/assets/material/icon/icon_camera.png'),new_item_path
+            = icon('fas', 'camera', class: 'camera-icon')
