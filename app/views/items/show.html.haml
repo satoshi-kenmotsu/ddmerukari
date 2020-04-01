@@ -9,10 +9,10 @@
             .first-item__box
               -if index == 0
                 =image_tag get.src.url,class: 'first-item__box--img'
-              -if @item.Buyer_id.present?
-                .soldout_label
-                  .soldout_label__text
-                    SOLD
+                -if @item.Buyer_id.present?
+                  .soldout_label
+                    .soldout_label__text
+                      SOLD
                 .other-item
                   -@item_images.each_with_index do |get, index|
                     .other-item__first
