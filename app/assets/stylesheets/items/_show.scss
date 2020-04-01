@@ -29,9 +29,26 @@
               width: 560px;
               align-items: center;
               margin: 0 auto;
+              position: relative;
               &--img{
                 width: 300px;
                 height: 300px;
+                z-index: 1;
+              }
+              .soldout_label{
+                height: 130px;
+                width: 150px;
+                position: absolute;
+                z-index: 2;
+                color: #fff;
+                left: 0;
+                background:
+                  linear-gradient(to top left, rgba(255,255,255,0) 50%, rgb(243, 30, 30) 50.5%) no-repeat top left/100% 100%;
+                &__text{
+                  transform: rotate(-40deg);
+                  font-size: 25px;
+                  font-weight: bold;
+                }
               }
             }
           }

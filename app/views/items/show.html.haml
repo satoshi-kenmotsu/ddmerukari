@@ -9,6 +9,10 @@
             .first-item__box
               -if index == 0
                 =image_tag get.src.url,class: 'first-item__box--img'
+              -if @item.Buyer_id.present?
+                .soldout_label
+                  .soldout_label__text
+                    SOLD
                 .other-item
                   -@item_images.each_with_index do |get, index|
                     .other-item__first
@@ -66,6 +70,9 @@
     - if (user_signed_in? && @item.seller_id == current_user.id)
       = link_to edit_item_path(@item), class: "item-edit-btn" do
         編集
+    - elsif @item.Buyer_id.present?
+      .soldout
+        売り切れました
     -else
       = link_to purchase_item_path(@item),class: "item-buy-btn" do
         購入画面に進む
