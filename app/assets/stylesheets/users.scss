@@ -235,6 +235,7 @@
                 font-size: 16px;
                 width: calc(50% - 6px);
                 margin: 8px 0 0;
+
               }
               label{
                 display: none;
@@ -247,7 +248,8 @@
               font-weight: 600;
             }
             .birthday_field{
-              #user_birth_year{
+              
+              #user_birth_year_id{
                 width: 76px;
                 height: 48px;
                 border-radius: 4px;
@@ -260,7 +262,7 @@
               label{
                 display: none;
               }
-              #user_birth_month{
+              #user_birth_month_id{
                 width: 76px;
                 height: 48px;
                 border-radius: 4px;
@@ -273,7 +275,7 @@
               label{
                 display: none;
               }
-              #user_birth_day{
+              #user_birth_day_id{
                 width: 76px;
                 height: 48px;
                 border-radius: 4px;
@@ -348,6 +350,16 @@
           .field{
             width: 100%;
             margin: 40px 0 0;
+           #address_prefecture_id{
+            width: calc(100% - 32px);
+            margin: 8px 0 0;
+            padding: 10px 16px 8px;
+            font-size: 16px;
+            height: 28px;
+            background: #fff;
+            line-height: 1.5;
+            font-size: 16px;
+           }
           }
           .actions{
             .next-btn{
