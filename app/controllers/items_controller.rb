@@ -1,5 +1,5 @@
 class ItemsController < ApplicationController
-  before_action :set_item, only: [:edit, :show, :update]
+  before_action :set_item, only: [:edit, :show, :update, :purchase, :pay, :done]
   require 'payjp'
 
   def index
@@ -67,7 +67,6 @@ class ItemsController < ApplicationController
   
 
   def purchase
-    @item = Item.find(params[:id])
     @item_images = @item.images
 
     card = Card.where(user_id: current_user.id).first
@@ -85,7 +84,6 @@ class ItemsController < ApplicationController
   end
 
   def pay
-    @item = Item.find(params[:id])
     card = Card.where(user_id: current_user.id).first
     Payjp.api_key = ENV['PAYJP_SECRET_KEY']
     charge = Payjp::Charge.create(
@@ -99,7 +97,6 @@ class ItemsController < ApplicationController
   end
 
   def done
-    @item = Item.find(params[:id])
 
   end
 
