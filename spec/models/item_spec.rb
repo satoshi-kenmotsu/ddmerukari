@@ -26,11 +26,11 @@ describe Item do
       expect(item.errors[:price]).to include("can't be blank")
     end
 
-    it "is invalid without a category_id" do
-      item = build(:item, category_id: "")
-      item.valid?
-      expect(item.errors[:category_id]).to include("can't be blank")
-    end
+    # it "is invalid without a category_id" do
+    #   item = build(:item, category_id: "")
+    #   item.valid?
+    #   expect(item.errors[:category_id]).to include("can't be blank")
+    # end
 
     it "is invalid without a prefecture_id" do
       item = build(:item, prefecture_id: "")
