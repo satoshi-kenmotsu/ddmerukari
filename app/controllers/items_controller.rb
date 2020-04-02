@@ -3,7 +3,7 @@ class ItemsController < ApplicationController
   require 'payjp'
 
   def index
-    @items = Item.includes(:images).order('created_at DESC').page(params[:page]).per(3)
+    @items = Item.includes(:images).order('created_at DESC').page(params[:page]).per(6)
     @lady_items = Item.where(category_id: 1).where.not(business_stats: 2).limit(4).order(id: "DESC")
   end
 
