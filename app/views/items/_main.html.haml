@@ -107,29 +107,3 @@
                       = item.price
                       円
                   %p (税込)
-    %h2.head ピックアップブランド
-    .productBox
-      .productHead
-        %a{:href => "#"}
-          %h3.title アーカイバ
-      .productLists
-        - @items.each do |item|
-          .productList
-            = link_to item_path(item.id) do
-              %figure.productList--img
-                - item.images.each_with_index do |image, index|
-                  - if index == 0
-                    = image_tag image.src.url
-                  -if item.Buyer_id.present?
-                    .soldout_label
-                      .soldout_label__text
-                        SOLD
-              .productList--body
-                %h3.name
-                  = item.name
-                .details
-                  %ul
-                    %li
-                      = item.price
-                      円
-                  %p (税込)

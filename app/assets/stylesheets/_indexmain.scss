@@ -202,11 +202,12 @@
         margin: 26px auto;
         display: flex;
         justify-content: space-around;
+        flex-wrap: wrap;
         .productList {
           background-color: #fff;
           width: 220px;
           display: inline-block;
-          float: left;
+          flex: left;
           a {
             display: inline-block;
             .productList--img {
