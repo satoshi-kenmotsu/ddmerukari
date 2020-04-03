@@ -12,4 +12,10 @@ class Item < ApplicationRecord
   belongs_to_active_hash :delivery_charge
   belongs_to_active_hash :delivery_date
   has_many :comments, dependent: :destroy
+
+
+  def self.search(search)
+    return Item.all unless search
+    Item.where('name LIKE(?)', "%#{search}%")
+  end
 end

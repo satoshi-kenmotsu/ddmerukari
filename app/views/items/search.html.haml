@@ -1,0 +1,23 @@
+%h2.search-title 検索結果一覧
+.search-view
+  - @item.each do |item|
+    .search-view__content
+      = link_to item_path(item.id) do
+        %figure.search-view__img
+          - item.images.each_with_index do |image, index|
+            - if index == 0
+              = image_tag image.src.url
+            -if item.Buyer_id.present?
+              .soldout_label
+                .soldout_search__text
+                  売り切れ
+        .search-view--body
+          %h3.name
+            = item.name
+          .search-price
+            %ul
+              %li
+                %p
+                  = item.price
+                  円
+                %p (税込)
