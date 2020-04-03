@@ -24,12 +24,6 @@
               %button(type="submit")
                 = link_to icon('fas', 'search', class: 'search-icon')
         .header__inner--bottom
-          .bottom-left
-            .bottom-left__category
-              = link_to 'カテゴリー', '#'
-            .bottom-left__bland
-              = link_to 'ブランド', '#'
-
           .bottom-right
             - if user_signed_in?
               .bottom-right__create

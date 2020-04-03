@@ -40,6 +40,8 @@ class Users::RegistrationsController < Devise::RegistrationsController
   end
 
   def show
+    item = Item.where(seller_id: current_user.id)
+    @num = item.count
   end
 
   def logout
