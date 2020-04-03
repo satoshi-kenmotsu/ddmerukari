@@ -1,5 +1,5 @@
 class ItemsController < ApplicationController
-  before_action :set_item, only: [:edit, :show, :update, :purchase, :pay, :done]
+  before_action :set_item, only: [:edit, :show, :update, :purchase, :pay, :done,]
   require 'payjp'
 
   def index
@@ -109,7 +109,9 @@ class ItemsController < ApplicationController
   end
 
 
-
+  def search
+    @item = Item.search(params[:keyword])
+  end
 
 
   private

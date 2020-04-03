@@ -48,27 +48,33 @@ a {
         display: flex;
         form {
           width: 100%;
+          display: flex;
         .searchBox--input {
           width: 100%;
           height: 36px;
         }
       }
-      button {
-        width: 36px;
-        height: 36px;
+      .search {
         display: flex;
-        justify-content: center;
-        align-items: center;
-        background-color: #3CCACE;
-        img {
-          width: 20px;
-          height: 20px;
-          background-color: #3CCACE;
+
+        .search-btn {
+          position: relative;
+          margin: 0;
+          padding: 0;
+          @include furimacolor;
+          width: 36px;
+          height: 36px;
+
+
+          i.fa.fa-search {
+            color: white;
+
+          }
         }
-  
       }
-    }
+    }      
   }
+
     &--bottom{
       font-size: 14px;
        display: flex;
