@@ -39,7 +39,7 @@
           .field
             = f.label :telephone, "電話番号"
             %br/
-            = f.text_field :telephone, class: "input-field"
+            = f.text_field :telephone, class: "input-field", placeholder: "例）090-4444-4444"
           .actions
             = f.submit "次へ進む", class: "next-btn"
   = render "footer"
