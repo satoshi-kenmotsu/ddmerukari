@@ -1,4 +1,7 @@
-%h2.search-title 検索結果一覧
+.search-box
+  %h2.search-title 検索結果一覧
+  %p
+    = "(#{params[:keyword]})"
 .search-view
   - @item.each do |item|
     .search-view__content
