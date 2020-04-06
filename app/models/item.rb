@@ -12,4 +12,9 @@ class Item < ApplicationRecord
   belongs_to_active_hash :delivery_charge
   belongs_to_active_hash :delivery_date
   has_many :comments, dependent: :destroy
+
+  belongs_to :user
+  has_many :bookmarks
+  has_many :bookmark_users, through: :bookmarks, source: :user
+
 end
