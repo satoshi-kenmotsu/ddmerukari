@@ -415,15 +415,9 @@
         font-weight: bold;
       }
       &__lower{
-        display: flex;
         margin-top: 20px;
-        &__left{
-          margin-left: 40%;
-          font-size: 20px;
-          font-weight: bold;
-        }
         &__right{
-          margin-left: 20px;
+          text-align: center;
           font-size: 20px;
           font-weight: bold;
         }

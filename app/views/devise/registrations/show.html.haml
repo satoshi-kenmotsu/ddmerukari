@@ -1,3 +1,5 @@
+- breadcrumb :show
+= render "layouts/breadcrumbs"
 .mypage
   = render 'left-bar'
   .mypage__right
@@ -6,10 +8,9 @@
         = current_user.nickname
         さん
       .mypage__right__user_name__lower
-        .mypage__right__user_name__lower__left
-          評価 0
         .mypage__right__user_name__lower__right
-          出品数 0
+          出品数 
+          = @num
     .mypage__right__buy-item
       .mypage__right__buy-item__head
         購入した商品
