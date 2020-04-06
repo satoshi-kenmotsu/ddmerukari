@@ -1,5 +1,5 @@
 class Item < ApplicationRecord
-  validates :name, :description, :category, :status, :delivery_charge_id, :prefecture_id, :delivery_date_id, :price, presence: true
+  validates :name, :description, :category_id, :status, :delivery_charge_id, :prefecture_id, :delivery_date_id, :price, presence: true
   validates_associated :images
   validates :images, presence: true
   has_many :images, dependent: :destroy
