@@ -16,3 +16,9 @@
       .mypage__right__buy-item__head
         購入した商品
       .mypage__right__buy-item__content
+        %h3 いいねしている投稿
+        - @user.bookmark_items.each do |item|
+          = item.user.email
+          = item.content
+        = link_to "ユーザー一覧へ", users_path
+        = link_to "ホームへ戻る", items_path

@@ -1,7 +1,0 @@
-- if current_user.own_item?(item)
-  %div{:style => "display: inline; float: right;"}
-    = link_to icon('fas', 'pen'), edit_item_path(item), id: :"button-edit-#{item.id}"
-    = link_to icon('fas', 'trash-alt'), item_path(item), id: :"button-delete-#{item.id}",method: :delete, data: { confirm: '削除してよろしいですか？' }
-- else
-  %div{:style => "display: inline; float: right;"}
-    = render 'likes/bookmark_area', item: item
