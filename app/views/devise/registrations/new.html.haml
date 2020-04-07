@@ -5,6 +5,13 @@
       .sign_up__section__inner__title
         会員情報入力
       .sign_up__section__inner__form
+        .sign_up__section__inner__form__box
+          .sign_up__section__inner__form__box__facebook-box
+            = link_to 'Facebookで登録', user_facebook_omniauth_authorize_path,method: :post, class: "facebook"
+            = icon('fab', 'facebook-square' , class: 'facebook-icon') 
+          .sign_up__section__inner__form__box__google-box
+            = link_to 'Googleで登録', user_google_oauth2_omniauth_authorize_path, method: :post, class: "google"
+            = icon('fab', 'google' , class: 'google-icon') 
         = form_for(@user, url: user_registration_path) do |f|
           = render "devise/shared/error_messages", resource: @user
           .field-top
@@ -19,18 +26,18 @@
               必須
             %br/
             = f.email_field :email, autofocus: true, autocomplete: "email", class: "input-field", placeholder: "PC・携帯どちらでも可"
-          .field
-            = f.label :password, "パスワード"
-            %span.required
-              必須
-            %br/
-            = f.password_field :password, autocomplete: "new-password", class: "input-field", placeholder: "7文字以上"
-          .field
-            = f.label :password_confirmation, "パスワード（確認）"
-            %span.required
-              必須
-            %br/
-            = f.password_field :password_confirmation, autocomplete: "new-password", class: "input-field", placeholder: "7文字以上"
+            .field
+              = f.label :password, "パスワード"
+              %span.required
+                必須
+              %br/
+              = f.password_field :password, autocomplete: "new-password", class: "input-field", placeholder: "7文字以上"
+            .field
+              = f.label :password_confirmation, "パスワード（確認）"
+              %span.required
+                必須
+              %br/
+              = f.password_field :password_confirmation, autocomplete: "new-password", class: "input-field", placeholder: "7文字以上"
           -# .sub-title
           -#   %h3.title
           -#     本人確認

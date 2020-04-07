@@ -1,5 +1,5 @@
 class Item < ApplicationRecord
-  validates :name, :description, :category, :status, :delivery_charge_id, :prefecture_id, :delivery_date_id, :price, presence: true
+  validates :name, :description, :category_id, :status, :delivery_charge_id, :prefecture_id, :delivery_date_id, :price, presence: true
   validates_associated :images
   validates :images, presence: true
   has_many :images, dependent: :destroy
@@ -13,8 +13,15 @@ class Item < ApplicationRecord
   belongs_to_active_hash :delivery_date
   has_many :comments, dependent: :destroy
 
+
   belongs_to :user
   has_many :bookmarks
   has_many :bookmark_users, through: :bookmarks, source: :user
+
+
+  def self.search(search)
+    return Item.all unless search
+    Item.where('name LIKE(?)', "%#{search}%")
+  end
 
 end

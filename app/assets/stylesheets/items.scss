@@ -48,27 +48,33 @@ a {
         display: flex;
         form {
           width: 100%;
+          display: flex;
         .searchBox--input {
           width: 100%;
           height: 36px;
         }
       }
-      button {
-        width: 36px;
-        height: 36px;
+      .search {
         display: flex;
-        justify-content: center;
-        align-items: center;
-        background-color: #3CCACE;
-        img {
-          width: 20px;
-          height: 20px;
-          background-color: #3CCACE;
+
+        .search-btn {
+          position: relative;
+          margin: 0;
+          padding: 0;
+          @include furimacolor;
+          width: 36px;
+          height: 36px;
+
+
+          i.fa.fa-search {
+            color: white;
+
+          }
         }
-  
       }
-    }
+    }      
   }
+
     &--bottom{
       font-size: 14px;
        display: flex;
@@ -328,44 +334,47 @@ a {
 
 }
 
-
 .complate {
-  width: 25%;
-  margin: 0 auto;
+  width: 50%;
+  height: 55vh;
+  margin: 100px auto;
   background-color: white;
-  text-align: center;
-  border-bottom: 1px solid #f5f5f5;
-  h2 {
-    font-weight: bold;
+  &__title {
+    height: 100px;
+    text-align: center;
+    border-bottom: 1px solid #f5f5f5;
+    h2 {
+      font-weight: bold;
+      font-size: 25px;
+      line-height: 100px;
+    }
   }
-}
 
-.complate__name {
-  width: 25%;
-  margin: 0 auto;
-  background-color: white;
-  text-align: center;
-  p {
-    padding-top: 10px;
+  &__name {
+    text-align: center;
+    font-size: 25px;
+    padding: 1em 0;
+    p {
+      padding-top: 10px;
+    }
   }
-}
-.complate__price {
-  text-align: center;
-  width: 25%;
-  margin: 0 auto;
-  background-color: white;padding-top: 10px;
+  &__price {
+    font-size: 25px;
+    text-align: center;
+  }
 }
 
 
 .home-btn {
   text-align: center;
   display: block;
-  width: 7em;
-  height: 2em;
-  line-height: 2em;
-  margin: 20px auto;
+  width: 40%;
+  height: 50px;
+  font-weight: bold;
+  line-height: 50px;
+  margin: 70px auto;
   color: white;
-  border-radius: 5%;
+  border-radius: 5px;
   @include furimacolor;
 
 }

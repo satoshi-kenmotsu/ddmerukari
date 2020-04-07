@@ -1,5 +1,5 @@
 class ItemsController < ApplicationController
-  before_action :set_item, only: [:edit, :show, :update, :purchase, :pay, :done]
+  before_action :set_item, only: [:edit, :show, :update, :purchase, :pay, :done,]
   require 'payjp'
 
   def index
@@ -23,7 +23,7 @@ class ItemsController < ApplicationController
     if @item.save
       redirect_to root_path
     else
-      render :new
+      redirect_to new_item_path
     end  
   end
 
@@ -83,7 +83,7 @@ class ItemsController < ApplicationController
     #Cardテーブルは前回記事で作成、テーブルからpayjpの顧客IDを検索
     if card.blank?
       #登録された情報がない場合にカード登録画面に移動
-      redirect_to controller: "card", action: "new"
+      redirect_to new_card_path
     else
       Payjp.api_key = Rails.application.credentials.payjp[:sk_test]
       #保管した顧客IDでpayjpから情報取得
@@ -109,6 +109,12 @@ class ItemsController < ApplicationController
   def done
 
   end
+
+
+  def search
+    @item = Item.search(params[:keyword])
+  end
+
 
   private
   def item_params
