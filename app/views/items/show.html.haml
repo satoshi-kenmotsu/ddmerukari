@@ -95,7 +95,8 @@
         %form.message-form{action: "https://www.mercari.com/jp/comment/add/", method: "POST"}
           %input{name: "__csrf_value", type: "hidden", value: "c6d74b8154bde6722fa4706b572f66e5b9518c503d68d407cd894cccd479de68d2b28d31a4eaf9d47191b3d31c328490320d68080a6c0ea6cb52e9749975167de"}/
           %p 相手のことを考え丁寧なコメントを心がけましょう。不快な言葉遣いなどは利用制限や退会処分となることがあります。
-        - if user_signed_in?
+        - if (user_signed_in? && @item.seller_id == current_user.id)
+        - elsif user_signed_in?
           = form_for [@item, @comment] do |f|
             = f.text_area :content, class: 'textarea'
             %br
