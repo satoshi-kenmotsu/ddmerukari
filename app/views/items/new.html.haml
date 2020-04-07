@@ -366,13 +366,9 @@
                       .style_formLabel__3wM81.common_fontFamily__3-3Si
                         %label 商品の説明
                         %span.style_tag__xA80S.style_attention__3ULCL.style_small__2vSa8.common_fontFamily__3-3Si 必須
-                    =f.text_area :description, class: 'text', placeholder: "商品の説明（必須 1,000文字以内）\n（色、素材、重さ、定価、注意点など）\n\n例）2010年頃に1万円で購入したジャケットです。ライトグレーで傷はありません。あわせやすいのでおすすめです。\n          ", rows: "7"
+                    =f.text_area :description, class: 'text', placeholder: "商品の説明\n（色、素材、重さ、定価、注意点など）\n\n例）2010年頃に1万円で購入したジャケットです。ライトグレーで傷はありません。あわせやすいのでおすすめです。\n          ", rows: "7"
                     
                     .style_counter__ofu-P.common_fontFamily__3-3Si.style_right__1Vw8k
-                      %span> 0
-                      \/
-                      / 
-                      1000
               %hr.style_divider__1tLu3.style_size1__3jc3t/
               .sc-cTjmhe.gMiSZt
                 %p.sc-eAKXzc.iLTrHh 商品の詳細
@@ -460,11 +456,11 @@
                   .sc-jdeSqf.cFLFtx
                     .sc-iCwjlJ.cnklvD{"data-test" => "fee-label"}
                       %div 販売手数料（10%）
-                    %span.sc-jUpvKA.kKKxgp{"data-test" => "fee-value"} —
+                    -# %span.sc-jUpvKA.kKKxgp{"data-test" => "fee-value"} —
                   %hr.style_divider__1tLu3.style_size1__3jc3t/
                   .sc-jdeSqf.cFLFtx
                     .sc-iCwjlJ.cnklvD 販売利益
-                    %span.sc-jUpvKA.kKKxgp{"data-test" => "total-value"} —
+                    -# %span.sc-jUpvKA.kKKxgp{"data-test" => "total-value"} —
                 .sc-hRmvpr.jgwUQW
                   %button.style_button__3yWFH.common_fontFamily__3-3Si.style_primary__Mg3zL.style_medium__3wTQ5.style_fluid__3mdYA.style_legacy__2D0U0.sc-hUMlYv.fXzMES{:tabindex => "0", :type => "submit"} 出品する
                 %p.sc-gbzWSY.bwMfzZ

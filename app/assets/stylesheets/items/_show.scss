@@ -123,6 +123,8 @@
     .item-description-inner {
       padding: 32px 0 0;
       font-size: 18px;
+      word-wrap: break-word;
+      width: 620px;
     }
   }
   .item-detail-message {
