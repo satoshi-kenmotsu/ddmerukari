@@ -1,12 +1,13 @@
 .complate
-  %h2.title 購入が完了しました！
-.complate__name
-  %p.item_name
-    = @item.name
-.complate__price
-  %p.item_price
-    ¥
-    = @item.price
-    (送料込み)
-= link_to "/",class: "home-btn" do
-  ホームへ戻る
+  .complate__title
+    %h2.title 購入が完了しました！
+  .complate__name
+    %p.item_name
+      = @item.name
+  .complate__price
+    %p.item_price
+      ¥
+      = @item.price
+      (送料込み)
+  = link_to "/",class: "home-btn" do
+    ホームへ戻る
