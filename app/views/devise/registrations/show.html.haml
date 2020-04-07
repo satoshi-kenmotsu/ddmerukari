@@ -14,11 +14,15 @@
           出品数 0
     .mypage__right__buy-item
       .mypage__right__buy-item__head
-        購入した商品
+        「いいね！」した商品
       .mypage__right__buy-item__content
-        %h3 いいねしている投稿
-        - @user.bookmark_items.each do |item|
-          = item.user.email
-          = item.content
-        = link_to "ユーザー一覧へ", users_path
-        = link_to "ホームへ戻る", items_path
+        - current_user.bookmark_items.each do |item|
+          %p
+            = item.name
+            - item.images.each_with_index do |image, index|
+              - if index == 0
+                = image_tag image.src.url
+              - if item.Buyer_id.present?
+                .soldout_label
+                  .soldout_label__text
+                    SOLD

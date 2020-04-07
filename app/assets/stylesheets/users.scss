@@ -441,8 +441,9 @@
         border-bottom: solid 1px gray;
       }
       &__content{
-        height: 300px;
         background: #fff;
+        display: flex;
+        text-align: center;
       }
     }
   }

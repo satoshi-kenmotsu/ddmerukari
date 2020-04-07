@@ -44,6 +44,7 @@ class Users::RegistrationsController < Devise::RegistrationsController
 
   def logout
   end
+
   # GET /resource/edit
   # def edit
   #   super
