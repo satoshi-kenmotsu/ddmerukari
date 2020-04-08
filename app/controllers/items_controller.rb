@@ -78,7 +78,6 @@ class ItemsController < ApplicationController
 
   def purchase
     @item_images = @item.images
-
     card = Card.where(user_id: current_user.id).first
     #Cardテーブルは前回記事で作成、テーブルからpayjpの顧客IDを検索
     if card.blank?
@@ -113,6 +112,18 @@ class ItemsController < ApplicationController
 
   def search
     @item = Item.search(params[:keyword])
+  end
+
+  def buy
+    @items = Item.includes(:images).where(Buyer_id: current_user.id).order(id: "DESC")
+    item = Item.where(Buyer_id: current_user.id)
+    @num = item.count
+  end
+
+  def seller
+    @items = Item.includes(:images).where(seller_id: current_user.id).order(id: "DESC")
+    item = Item.where(seller_id: current_user.id)
+    @num = item.count
   end
 
 
