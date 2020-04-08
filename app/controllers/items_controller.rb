@@ -1,5 +1,7 @@
 class ItemsController < ApplicationController
   before_action :set_item, only: [:edit, :show, :update, :purchase, :pay, :done,]
+  before_action :correct_user, only: [:edit, :update]
+  before_action :myitem_not_purchase, only: [:purchase, :pay, :done]
   require 'payjp'
 
   def index
@@ -152,4 +154,18 @@ class ItemsController < ApplicationController
     ).merge(user_id: current_user.id)
   end
 
+  def correct_user
+    if (user_signed_in? && @item.seller_id == current_user.id)
+    else
+      redirect_to root_path
+    end
+  end
+
+  def myitem_not_purchase
+    if (user_signed_in? && @item.seller_id != current_user.id && @item.Buyer_id.nil?) 
+    else
+      redirect_to root_path
+    end
+  end
+  
 end
