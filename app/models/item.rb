@@ -14,7 +14,6 @@ class Item < ApplicationRecord
   has_many :comments, dependent: :destroy
 
 
-  belongs_to :user
   has_many :bookmarks
   has_many :bookmark_users, through: :bookmarks, source: :user
 
