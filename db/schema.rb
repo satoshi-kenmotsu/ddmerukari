@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2020_04_02_051159) do
+ActiveRecord::Schema.define(version: 2020_04_02_074038) do
 
   create_table "addresses", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
     t.string "post_number", null: false
@@ -23,6 +23,16 @@ ActiveRecord::Schema.define(version: 2020_04_02_051159) do
     t.datetime "updated_at", null: false
     t.integer "prefecture_id"
     t.index ["user_id"], name: "index_addresses_on_user_id"
+  end
+
+  create_table "bookmarks", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
+    t.bigint "user_id"
+    t.bigint "item_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["item_id"], name: "index_bookmarks_on_item_id"
+    t.index ["user_id", "item_id"], name: "index_bookmarks_on_user_id_and_item_id", unique: true
+    t.index ["user_id"], name: "index_bookmarks_on_user_id"
   end
 
   create_table "cards", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
@@ -79,9 +89,9 @@ ActiveRecord::Schema.define(version: 2020_04_02_051159) do
     t.datetime "updated_at", null: false
     t.bigint "category_id"
     t.integer "prefecture_id"
-    t.bigint "seller_id"
     t.integer "delivery_date_id", null: false
     t.integer "delivery_charge_id", null: false
+    t.bigint "seller_id"
     t.bigint "Buyer_id"
     t.index ["Buyer_id"], name: "index_items_on_Buyer_id"
     t.index ["category_id"], name: "index_items_on_category_id"
@@ -108,6 +118,8 @@ ActiveRecord::Schema.define(version: 2020_04_02_051159) do
     t.index ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true
   end
 
+  add_foreign_key "bookmarks", "items"
+  add_foreign_key "bookmarks", "users"
   add_foreign_key "cards", "users"
   add_foreign_key "comments", "items"
   add_foreign_key "comments", "users"

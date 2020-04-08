@@ -11,5 +11,17 @@
         .mypage__right__user_name__lower__right
           出品数 
           = @num
-
-       
+    .mypage__right__buy-item
+      .mypage__right__buy-item__head
+        「いいね！」した商品
+      .mypage__right__buy-item__content
+        - current_user.bookmark_items.each do |item|
+          %p
+            = item.name
+            - item.images.each_with_index do |image, index|
+              - if index == 0
+                = image_tag image.src.url
+              - if item.Buyer_id.present?
+                .soldout_label
+                  .soldout_label__text
+                    SOLD

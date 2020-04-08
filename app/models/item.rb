@@ -14,8 +14,14 @@ class Item < ApplicationRecord
   has_many :comments, dependent: :destroy
 
 
+  belongs_to :user
+  has_many :bookmarks
+  has_many :bookmark_users, through: :bookmarks, source: :user
+
+
   def self.search(search)
     return Item.all unless search
     Item.where('name LIKE(?)', "%#{search}%")
   end
+
 end

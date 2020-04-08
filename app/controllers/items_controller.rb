@@ -32,6 +32,8 @@ class ItemsController < ApplicationController
     @item_images = @item.images
     @comment = Comment.new
     @comments = @item.comments.includes(:user)
+    @item = Item.find(params[:id])
+    @bookmark = Bookmark.new
   end
 
   def edit

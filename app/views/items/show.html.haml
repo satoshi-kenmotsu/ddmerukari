@@ -29,6 +29,7 @@
           %th 出品者
           %td
             = link_to @user.nickname, "#"
+
         %tr
           %th カテゴリー
           %td
@@ -61,6 +62,12 @@
           %th 発送日の目安
           %td
             = @item.delivery_date.name
+
+    - if current_user.already_bookmark?(@item)
+      = button_to 'いいねを取り消す', item_bookmark_path(@item), method: :delete
+    - else
+      = button_to 'いいね', item_bookmarks_path(@item)
+
     .item-price-box.text-center
       .item-price.bold
         ¥
