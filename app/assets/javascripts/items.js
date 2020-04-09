@@ -16,7 +16,7 @@ $(function() {
     }
   
     // file_fieldのnameに動的なindexをつける為の配列
-    let fileIndex = [1,2,3,4,5,6,7,8,9,10];
+    let fileIndex = [1,2,3,4,5];
     // 既に使われているindexを除外
     lastIndex = $('.js-file_group:last').data('index');
     fileIndex.splice(0, lastIndex);
@@ -37,10 +37,23 @@ $(function() {
         // fileIndexの先頭の数字を使ってinputを作る
         $('#image-box').append(buildFileField(fileIndex[0]));
         fileIndex.shift();
+        if (fileIndex.shift() == 8){
+          console.log("ko")
+          '#previews'.css({
+            'display': 'none'
+          });
+        }
         // 末尾の数に1足した数を追加する
         fileIndex.push(fileIndex[fileIndex.length - 1] + 1);
       }
     });
+
+    // if (fileIndex.length == 4) {
+    //   console.log(" ko")
+      // '.js-file'.css({
+      //   display: "none"
+      // });
+    // }
   
     $('#image-box').on('click', '.js-remove', function() {
       const targetIndex = $(this).parent().data('index');
