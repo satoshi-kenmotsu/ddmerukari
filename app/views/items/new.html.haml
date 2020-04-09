@@ -393,13 +393,13 @@
                     %ul.sc-jbKcbu.cApMkI.sc-bfYoXt.evZoVs.style_controls__B6nQm
                 .style_formgroup__3IPME.sc-iNhVCk.iucczz
                   .style_body__1OP1S
-                    %div{name: "status"}
+                    %div{name: "status_id"}
                       .style_formLabel__3wM81.common_fontFamily__3-3Si
                         %label 商品の状態
                         %span.style_tag__xA80S.style_attention__3ULCL.style_small__2vSa8.common_fontFamily__3-3Si 必須
                     .style_select__3R6W_.common_fontFamily__3-3Si.style_fluid__31br4
                       .style_selectarea__3ZX8E
-                        = f.select :status, [["新品、未使用"],["未使用に近い"],["目立った傷や汚れなし"],["やや傷や汚れあり"],["傷や汚れあり"],["全体的に状態が悪い"]]
+                        = f.collection_select :status_id, Status.all, :id, :name
               %hr.style_divider__1tLu3.style_size1__3jc3t/
               .sc-cTjmhe.gMiSZt
                 %p.sc-eAKXzc.iLTrHh
