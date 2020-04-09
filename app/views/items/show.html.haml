@@ -63,17 +63,17 @@
           %td
             = @item.delivery_date.name
 
-    - if user_signed_in? && current_user.already_bookmark?(@item)
-      = button_to 'いいねを取り消す', item_bookmark_path(@item), method: :delete
-    - elsif user_signed_in?
-      = button_to 'いいね', item_bookmarks_path(@item)
-
     .item-price-box.text-center
       .item-price.bold
         ¥
         = @item.price
       .item-tax (税込)
       .item-shipping-fee 送料込み
+      .like-box
+        - if user_signed_in? && current_user.already_bookmark?(@item)
+          = button_to 'いいねを取り消す', item_bookmark_path(@item), method: :delete, class: "like-box__form"
+        - elsif user_signed_in?
+          = button_to 'いいね!',item_bookmarks_path(@item), class: "like-box__form"
     - if (user_signed_in? && @item.seller_id == current_user.id)
       = link_to edit_item_path(@item), class: "item-edit-btn" do
         編集
