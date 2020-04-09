@@ -82,7 +82,8 @@
     .text-center {
       text-align: center;
       display: flex;
-      padding: 10px 50px 0px 190px;
+      padding: 10px 0px 0px 180px;
+      // padding: 10px 50px 0px 190px;
       .bold {
         margin: 0 16px 0 0;
         font-size: 50px;
@@ -96,6 +97,20 @@
         display: inline-block;
         font-size: 16px;
         padding-top: 30px;
+      }
+      .like-box{
+        line-height: 58px;
+        &__form{
+          margin-left: 20px;
+          display: inline-block;
+          padding: 4px 12px;
+          font-size: 10px;
+          border-radius: 10px;
+          text-decoration: none;
+          color: #FFF;
+          background-color: red;
+          transition: .4s;
+        }
       }
     }
     .item-buy-btn {
