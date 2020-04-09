@@ -24,7 +24,7 @@ Things you may want to cover:
 * ...
 ## usersテーブル
 
-aa
+
 
 |Column|Type|Options|
 |------|----|-------|
